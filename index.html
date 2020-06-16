@@ -33,9 +33,15 @@
 		id: 'mapbox.streets'
 	}).addTo(mymap);
 	
-	var moose1 = L.marker([42.3611, -71.0570]).addTo(mymap);
+	var moose2 = L.marker([42.3611, -71.0570]).addTo(mymap);
+	var moose1 = L.circle([42.36, -71.04], {
+	    	color: 'red',
+    		fillColor: '#f03',
+    		fillOpacity: 0.5,
+    		radius: 500
+		}).addTo(mymap);
 	
-	moose1.bindPopup("<b>Moose</b><br>15 June 2020 20:10<br>large female with 2 calves").openPopup();
+	moose1.bindPopup("<b>Moose</b><br>15 June 2020, 20:10<br>large female with 2 calves").openPopup();
 
 </script>
 
