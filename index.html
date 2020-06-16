@@ -19,7 +19,7 @@
 
 <body>
 <h1>Hello World</h1>
-<p>This is an interactive map that shows animal sightings in your area. We currently track moose, bear, and porcupines.</p>
+<h2>This is an interactive map that shows moose sightings in your area.</h2>
 <div id="mapid" style="width: 600px; height: 400px;"></div>
 <script>
 
@@ -38,11 +38,19 @@
 	    	color: 'red',
     		fillColor: '#f03',
     		fillOpacity: 0.5,
-    		radius: 500
+    		radius: 300
 		}).addTo(mymap);
 	
-	moose1.bindPopup("<b>Moose</b><br>15 June 2020, 20:10<br>large female with 2 calves").openPopup();
+	moose1.bindPopup("<b>Moose sighting!</b><br>15 June 2020, 20:10<br>Female, large with 2 calves").openPopup();
 
+	var moose3 = L.circle([42.36, -72], {
+	    	color: 'green',
+    		fillOpacity: 0.5,
+    		radius: 300
+		}).addTo(mymap);
+
+	moose3.bindPopup("<b>Moose sighting!</b><br>15 June 2020, 20:10<br>Male, antlers").openPopup();
+	
 </script>
 
 
