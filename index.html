@@ -32,16 +32,16 @@
 <div id="map"></div>
 
 <script>	
-var map = L.map('map').setView([42.3167727,-72.6357141], 13);	
+var map = L.map('map').setView([42.319519,-72.629761], 13);	
 	
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 	maxZoom: 19,
 	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 	
-	var moose2 = L.marker([42.31611, -72.0570]).addTo(map);
+	var moose2 = L.marker([42.31611, -72.628]).addTo(map);
 	
-	var moose1 = L.circle([42.316, -72.04], {
+	var moose1 = L.circle([42.316, -72.62], {
 	    	color: 'red',
     		fillColor: '#f03',
     		fillOpacity: 0.5,
@@ -50,7 +50,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 	moose1.bindPopup("<b>Moose sighting!</b><br>15 June 2020, 20:10<br>Female, large with 2 calves").openPopup();
 
-	var moose3 = L.circle([42.316, -72.06], {
+	var moose3 = L.circle([42.316, -72.63], {
 	    	color: 'green',
     		fillOpacity: 0.5,
     		radius: 400
