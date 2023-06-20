@@ -40,6 +40,8 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 	
 	var moose2 = L.marker([42.31611, -72.628]).addTo(map);
+
+	marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
 	
 	var moose1 = L.circle([42.316, -72.62], {
 	    	color: 'red',
