@@ -6,9 +6,6 @@
 	
 	<title>Airtable API Test</title>
     
-	<script src="https://github.com/Airtable/airtable.js"></script>
-
-
 	<style>
 		html, body {
 			height: 100%;
@@ -25,6 +22,9 @@
 <div id="Airtable"></div>
 
 <script>
+src="https://github.com/Airtable/airtable.js"
+</script>
+	
 var Airtable = require('airtable');
 var base = new Airtable({apiKey: 'ron_3141965'}).base('appBW71DB555EyIBL');
 
@@ -48,7 +48,7 @@ base('Map_source').select({
     if (err) { console.error(err); return; }
 });
 
-</script>
+
 
 </body>
 </html>
