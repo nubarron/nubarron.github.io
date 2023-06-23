@@ -20,6 +20,7 @@
 <h2>This is an interactive map that shows moose sightings in your area.</h2>
 	<p>Please note that moose are dangerous animals and should be observed from a safe distance.</p>
 
+	<script>
 var Airtable = require('airtable');
 var base = new Airtable({apiKey: 'ron_3141965'}).base('appBW71DB555EyIBL');
 	
@@ -43,7 +44,7 @@ base('Map_source').select({
     if (err) { console.error(err); return; }
 });
 
-
+	</script>
 
 </body>
 </html>
