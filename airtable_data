@@ -1,1 +1,8 @@
 <script src="https://github.com/Airtable/airtable.js"></script>
+
+var Airtable = require('airtable');
+Airtable.configure({
+    endpointUrl: 'https://api.airtable.com',
+    apiKey: 'YOUR_SECRET_API_TOKEN'
+});
+var base = Airtable.base('appBW71DB555EyIBL');
