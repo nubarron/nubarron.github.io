@@ -14,7 +14,7 @@
 
              
              (async () => {
-  const res = await fetch('https://api.airtable.com/v0/appBW71DB555EyIBL/Map_source -H "Authorization: Bearer patHXMh9QL5KMwJzG.d5cc1651970c910d9faab7bd5246c025f994540188a71e4c9dad38d6c1192f94"')
+  const res = await fetch('https://api.airtable.com/v0/appBW71DB555EyIBL/Map_source -H Authorization: Bearer patHXMh9QL5KMwJzG.d5cc1651970c910d9faab7bd5246c025f994540188a71e4c9dad38d6c1192f94')
   const answer = await res.json()
   console.log(answer)
 })()
