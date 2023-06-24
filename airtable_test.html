@@ -62,13 +62,13 @@ fetch(full_url);
           var Airtable = require('airtable');
              
           Airtable.configure({
-              endpointUrl: 'https://api.airtable.com',
+              endpointUrl: 'https://api.airtable.com/v0/appBW71DB555EyIBL/Map_source',
               apiKey: 'patHXMh9QL5KMwJzG.d5cc1651970c910d9faab7bd5246c025f994540188a71e4c9dad38d6c1192f94'
           });
 /*
              var base = Airtable.base('appBW71DB555EyIBL');
             var Airtable = require('https://github.com/Airtable/airtable.js');
-            var base = new Airtable({apiKey: 'ron_3141965'}).base('appBW71DB555EyIBL');
+*/            var base = new Airtable({apiKey: 'ron_3141965'}).base('appBW71DB555EyIBL');
 
             base('Map_source').select({
             // Selecting the first 3 records in Grid view:
