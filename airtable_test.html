@@ -21,9 +21,11 @@ var bearer = '-H Authorization: Bearer patHXMh9QL5KMwJzG.d5cc1651970c910d9faab7b
              alert(bearer);
 var full_url = url + ' ' + bearer;
              alert(full_url);
-fetch(full_url).then(responseJson => {
-        var items = JSON.parse(responseJson._bodyInit);
-    });;
+fetch(full_url);
+     
+//     .then(responseJson => {
+  //      var items = JSON.parse(responseJson._bodyInit);
+   // });;
              
 /*fetch(url, {
 //        method: 'GET',
@@ -68,7 +70,7 @@ fetch(full_url).then(responseJson => {
               apiKey: 'patHXMh9QL5KMwJzG.d5cc1651970c910d9faab7bd5246c025f994540188a71e4c9dad38d6c1192f94'
           });
 
-             var base = Airtable.base('appBW71DB555EyIBL');
+//             var base = Airtable.base('appBW71DB555EyIBL');
             var Airtable = require('airtable');
             var base = new Airtable({apiKey: 'patHXMh9QL5KMwJzG.d5cc1651970c910d9faab7bd5246c025f994540188a71e4c9dad38d6c1192f94'}).base('appBW71DB555EyIBL');
 
