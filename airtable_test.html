@@ -12,7 +12,27 @@
           <img src="images/firefox-icon.png" alt="My test image" />
         <script>
 
+
+             var url = "https://api.airtable.com/v0/appBW71DB555EyIBL/Map_source";
+var bearer = 'Bearer ' + 'patHXMh9QL5KMwJzG.d5cc1651970c910d9faab7bd5246c025f994540188a71e4c9dad38d6c1192f94';
              
+fetch(url, {
+        method: 'GET',
+        withCredentials: true,
+        credentials: 'include',
+        headers: {
+            'Authorization': bearer,
+//            'X-FP-API-KEY': 'iphone', //it can be iPhone or your any other attribute
+            'Content-Type': 'application/json'
+        }
+    }).then(responseJson => {
+        var items = JSON.parse(responseJson._bodyInit);
+    })
+    .catch(error => this.setState({
+        isLoading: false,
+        message: 'Something bad happened ' + error
+    }));
+       /*      
              (async () => {
   const res = await fetch('https://api.airtable.com/v0/appBW71DB555EyIBL/Map_source -H Authorization: Bearer patHXMh9QL5KMwJzG.d5cc1651970c910d9faab7bd5246c025f994540188a71e4c9dad38d6c1192f94')
   const answer = await res.json()
