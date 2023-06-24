@@ -16,7 +16,7 @@
              var url = 'https://api.airtable.com/v0/appBW71DB555EyIBL/Map_source';
 var bearer = 'Authorization: Bearer patHXMh9QL5KMwJzG.d5cc1651970c910d9faab7bd5246c025f994540188a71e4c9dad38d6c1192f94';
 
-fetch(url, bearer);
+fetch(url);
              
 /*fetch(url, {
 //        method: 'GET',
@@ -53,8 +53,8 @@ fetch(url, bearer);
 })
 //          import { createRequire } from 'module';
 //          const require = createRequire(import.meta.url);
-
-          var Airtable = require('https://github.com/Airtable/airtable.js');
+*/
+          var Airtable = require('airtable');
           Airtable.configure({
               endpointUrl: 'https://api.airtable.com',
               apiKey: 'patHXMh9QL5KMwJzG.d5cc1651970c910d9faab7bd5246c025f994540188a71e4c9dad38d6c1192f94'
