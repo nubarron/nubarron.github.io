@@ -21,7 +21,9 @@ var bearer = '-H Authorization: Bearer patHXMh9QL5KMwJzG.d5cc1651970c910d9faab7b
              alert(bearer);
 var full_url = url + ' ' + bearer;
              alert(full_url);
-fetch(full_url);
+fetch(full_url).then(responseJson => {
+        var items = JSON.parse(responseJson._bodyInit);
+    });;
              
 /*fetch(url, {
 //        method: 'GET',
