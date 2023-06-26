@@ -71,7 +71,6 @@
 //	    alert(masen_lat);
         var masen_long = record.get('Long'); 
 //	    alert(masen_long);
-
 	    
 	var masenpop = L.marker([masen_lat, masen_long]).addTo(map);
 	    masenpop.bindPopup(masen_name + '<b \>' + masen_desc).openPopup();
