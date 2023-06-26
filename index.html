@@ -66,9 +66,11 @@
 	var masen_name = record.get('Name');  
 	    alert(masen_name);
 	var masen_desc = record.get('Description'); // test
+	    alert(masen_desc);
         var masen_latlong = record.get('LatLong'); 
+	    alert(masen_latlong);
 
-	var masenpop = L.marker([LatLong]).addTo(map);
+	var masenpop = L.marker([masen_latlong]).addTo(map);
 	    masenpop.bindPopup("<b>masen_name</b><br>masen_desc<br>").openPopup();
     });
 
