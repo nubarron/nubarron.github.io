@@ -61,16 +61,18 @@
         console.log('Retrieved', record.get('Name'));
         alert(record.get('Name'));
 	alert(record.get('Description')); // test
-        alert(record.get('LatLong')); 
+        alert(record.get('Lat')); 
 
 	var masen_name = record.get('Name');  
 	    alert(masen_name);
 	var masen_desc = record.get('Description'); // test
 	    alert(masen_desc);
-        var masen_latlong = record.get('LatLong'); 
-	    alert(masen_latlong);
+        var masen_lat = record.get('Lat'); 
+	    alert(masen_lat);
+        var masen_long = record.get('Long'); 
+	    alert(masen_long);
 
-	var masenpop = L.marker([masen_latlong]).addTo(map);
+	var masenpop = L.marker([masen_lat, masen_long]).addTo(map);
 	    masenpop.bindPopup("<b>masen_name</b><br>masen_desc<br>").openPopup();
     });
 
