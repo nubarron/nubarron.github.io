@@ -62,6 +62,13 @@
         alert(record.get('Name'));
 	alert(record.get('Description')); // test
         alert(record.get('LatLong')); 
+
+	var name = record.get('Name');    
+	var desc = record.get('Description'); // test
+        var latlong = record.get('LatLong'); 
+
+	var masenpop = L.marker([LatLong]).addTo(map);
+	    masenpop.bindPopup("<b>name</b><br>desc<br>").openPopup();
     });
 
     // To fetch the next page of records, call `fetchNextPage`.
