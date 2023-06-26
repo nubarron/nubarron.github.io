@@ -72,8 +72,13 @@
         var masen_long = record.get('Long'); 
 	    alert(masen_long);
 
-	var masenpop = L.marker([masen_lat, masen_long]).addTo(map);
-	    masenpop.bindPopup("<b>masen_name</b><br>masen_desc<br>").openPopup();
+//	var masenpop = L.marker([masen_lat, masen_long]).addTo(map);
+//	    masenpop.bindPopup("<b>masen_name</b><br>masen_desc<br>").openPopup();
+
+	    var popup = L.popup()
+		    .setLatLng([masen_lat, masen_long])
+    .setContent('<p>', masen_name, '</p>')
+    .openOn(map);
     });
 
     // To fetch the next page of records, call `fetchNextPage`.
