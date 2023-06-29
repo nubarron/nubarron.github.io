@@ -74,8 +74,10 @@
 	    
 	var masenpop = L.marker([masen_lat, masen_long]).addTo(map);
 
-	    marker.bindTooltip(masen_name).openTooltip();
+//	    masenpop.bindTooltip(masen_name).openTooltip();
 //	    masenpop.bindPopup(masen_name + '<b \>' + masen_desc).openPopup();
+
+	    masenpop.bindPopup("I am a circle.");
 	    
 /*	    var popup = L.popup()
 		    .setLatLng([masen_lat, masen_long])
