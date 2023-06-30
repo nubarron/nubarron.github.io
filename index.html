@@ -64,9 +64,13 @@
 //        alert(record.get('Lat')); 
 
 	var masen_name = record.get('Name');  
-	    alert(masen_name);
+//	    alert(masen_name);
 	var masen_desc = record.get('Description'); // test
 //	    alert(masen_desc);
+	var masen_address = record.get('Address');
+	var masen_city = record.get('City');
+	var masen_state = record.get('State');
+	var masen_zip = record.get('Zip Code');
         var masen_lat = record.get('Lat'); 
 //	    alert(masen_lat);
         var masen_long = record.get('Long'); 
@@ -78,7 +82,7 @@
 //	    masenpop.bindPopup(masen_name + '<b \>' + masen_desc).openPopup();
 
 	    
-	    masenpop.bindPopup(masen_name + '<br>' + masen_desc);
+	    masenpop.bindPopup(masen_name + '<br><br><b>' + masen_desc + '<\b>');
 	    
 /*	    var popup = L.popup()
 		    .setLatLng([masen_lat, masen_long])
