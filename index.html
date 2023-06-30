@@ -80,8 +80,8 @@
 
 //	    masenpop.bindTooltip(masen_name).openTooltip();
 //	    masenpop.bindPopup(masen_name + '<b \>' + masen_desc).openPopup();
-
-	    masenpop.bindPopup(masen_name + '<br><br><b>' + masen_desc + '<\b><br><br>'+ masen_address + ', ' + masen_city + ', ' + masen_state + ', ' + masen_zip);
+		http://nominatim.openstreetmap.org/search?q=135+pilkington+avenue,+birmingham&format=json&polygon=1&addressdetails=1
+	    masenpop.bindPopup(masen_name + '<br><br><b>' + masen_desc + '</b><br><br>'+ masen_address + ', ' + masen_city + ', ' + masen_state + ', ' + masen_zip);
 	    
 /*	    var popup = L.popup()
 		    .setLatLng([masen_lat, masen_long])
@@ -99,31 +99,6 @@
     if (err) { console.error(err); return; }
 });
 
-/*
-
-	
-	var moose2 = L.marker([42.31611, -72.628]).addTo(map);
-
-	moose2.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
-	
-	var moose1 = L.circle([42.316, -72.62], {
-	    	color: 'red',
-    		fillColor: '#f03',
-    		fillOpacity: 0.5,
-    		radius: 400
-		}).addTo(map);
-
-	moose1.bindPopup("<b>Moose sighting!</b><br>15 June 2020, 20:10<br>Female, large with 2 calves").openPopup();
-
-	var moose3 = L.circle([42.316, -72.63], {
-	    	color: 'green',
-    		fillOpacity: 0.5,
-    		radius: 400
-		}).addTo(map);
-
-	moose3.bindPopup("<b>Moose sighting!</b><br>15 June 2020, 20:10<br>Male, antlers").openPopup();
-
- */
 </script>	
 
 </body>
