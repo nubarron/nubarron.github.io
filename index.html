@@ -81,6 +81,15 @@
     			.then(data => console.log(data));
 
 	    
+const obj = JSON.parse(response);
+
+console.log(obj.lat);
+// Expected output: 42
+
+console.log(obj.lon);
+// Expected output: true
+
+	    
 	    
 	var masenpop = L.marker([masen_lat, masen_long]).addTo(map);
 
