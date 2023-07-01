@@ -77,13 +77,18 @@
 //	    alert(masen_long);
 
 
-	    function logJSONData() {
+/*	    function logJSONData() {
   const response = await fetch("https://nominatim.openstreetmap.org/search?q=305+westhampton%20+%20road,%20+%20northampton%20+%20ma&format=json");
   const jsonData = await response.json();
   console.log(jsonData);
 		    alert(jsonData);
 }
+*/
+	    
+  const response = fetch("https://nominatim.openstreetmap.org/search?q=305+westhampton%20+%20road,%20+%20northampton%20+%20ma&format=json");
+  const jsonData = response.json();
 
+	    
 	var masenpop = L.marker([masen_lat, masen_long]).addTo(map);
 
 //	    masenpop.bindTooltip(masen_name).openTooltip();
