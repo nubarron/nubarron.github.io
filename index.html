@@ -88,11 +88,12 @@
   const response = fetch("https://nominatim.openstreetmap.org/search?q=305+westhampton%20+%20road,%20+%20northampton%20+%20ma&format=json");
   const jsonData = response.json();
 */
-	    var resp = fetch("https://nominatim.openstreetmap.org/search?q=305+westhampton%20+%20road,%20+%20northampton%20+%20ma&format=json");
-		var jsonData = resp.json();
+	    fetch("https://nominatim.openstreetmap.org/search?q=305+westhampton%20+%20road,%20+%20northampton%20+%20ma&format=json");
+	    
+/*		var jsonData = resp.json();
 	    console.log(jsonData);
 alert(jsonData);
-
+*/
 	    
 	    
 	var masenpop = L.marker([masen_lat, masen_long]).addTo(map);
