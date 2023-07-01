@@ -76,48 +76,10 @@
         var masen_long = record.get('Long'); 
 //	    alert(masen_long);
 
-/*
-	    async function logJSONData() {
-  const response = await fetch("https://nominatim.openstreetmap.org/search?q=305+westhampton%20+%20road,%20+%20northampton%20+%20ma&format=json", GET);
-  const jsonData = await response.json();
-     
-}
-*/
-	/*    
-  const response = fetch("https://nominatim.openstreetmap.org/search?q=305+westhampton%20+%20road,%20+%20northampton%20+%20ma&format=json");
-  const jsonData = response.json();
-*/
-	   fetch("https://nominatim.openstreetmap.org/search?q=305+westhampton%20+%20road,%20+%20northampton%20+%20ma&format=json", GET)
-		  .then((response) => {
-    // Our handler throws an error if the request did not succeed.
-    if (!response.ok) {
-      throw new Error(`HTTP error: ${response.status}`);
-    }
-    // Otherwise (if the response succeeded), our handler fetches the response
-    // as text by calling response.text(), and immediately returns the promise
-    // returned by `response.text()`.
-    return response.text();
-  })
-  // When response.text() has succeeded, the `then()` handler is called with
-  // the text, and we copy it into the `poemDisplay` box.
-  .then((text) => {
-    poemDisplay.textContent = text;
-  })
-  // Catch any errors that might happen, and display a message
-  // in the `poemDisplay` box.
-  .catch((error) => {
-    poemDisplay.textContent = `Could not fetch verse: ${error}`;
-  });
+		   fetch("https://nominatim.openstreetmap.org/search?q=305+westhampton%20+%20road,%20+%20northampton%20+%20ma&format=json"")
+    			.then(response => response.json())
+    			.then(data => console.log(data));
 
-	/*    
-	   jsonData = testjson.json();
-	    console.log(jsonData);
-	    alert(jsonData);
-	    
-/*		var jsonData = resp.json();
-	    console.log(jsonData);
-alert(jsonData);
-*/
 	    
 	    
 	var masenpop = L.marker([masen_lat, masen_long]).addTo(map);
