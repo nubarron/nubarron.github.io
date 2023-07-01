@@ -81,6 +81,7 @@
   const response = await fetch("http://nominatim.openstreetmap.org/search?q=135+pilkington+avenue,+birmingham&format=json");
   const jsonData = await response.json();
   console.log(jsonData);
+		    alert(jsonData);
 }
 
 	var masenpop = L.marker([masen_lat, masen_long]).addTo(map);
