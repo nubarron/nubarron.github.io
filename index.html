@@ -79,7 +79,7 @@
 
 		   fetch("https://nominatim.openstreetmap.org/search?q=305+westhampton+road,+northampton+ma&format=json")
     			.then(response => response.json(), 
-			var obj = JSON.parse(response),
+			obj = JSON.parse(response),
 			console.log(obj.lat),
 			console.log(obj.lon),
     			data => console.log(data))
