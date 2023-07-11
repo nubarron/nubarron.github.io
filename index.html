@@ -77,9 +77,9 @@
         var masen_long = record.get('Long'); 
 //	    alert(masen_long);
 
-		   fetch("https://nominatim.openstreetmap.org/search?q=305+westhampton+road,+northampton+ma&format=json")
-    			.then(response => response.json())
-			   .then(console.log(response))
+		   const response = await fetch("https://nominatim.openstreetmap.org/search?q=305+westhampton+road,+northampton+ma&format=json")
+//    			.then(response => response.json())
+//			   .then(console.log(response))
 	    
 //			.then(const obj = JSON.parse(response))
 //		   	.then((res) => res.json())
@@ -87,7 +87,9 @@
 //			.then(console.log(obj.lon))
 //    			.then(data => console.log(data))
 
-	    
+//	    const response = await fetch("http://example.com/movies.json");
+//  const movies = await response.json();
+//  console.log(movies);
 
 	    
 	    
