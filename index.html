@@ -100,9 +100,11 @@
 //let url = 'http://example.com/movies.json';
 
 	    
-	    let url = 'https://nominatim.openstreetmap.org/search?q=305+westhampton+road,+northampton+ma';
-	    console.log(url);
+	//    let url = 'https://nominatim.openstreetmap.org/search?q=305+westhampton+road,+northampton+ma';
+	//    console.log(url);
 
+	    let response = fetch("https://nominatim.openstreetmap.org/search?q=305+westhampton+road,+northampton+ma&format=json");
+	(console.log(response));
 	    
 /*(async () => {
  const response = await fetch(url, { 
