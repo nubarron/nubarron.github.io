@@ -77,8 +77,8 @@
         var masen_long = record.get('Long'); 
 //	    alert(masen_long);
 
-		   fetch("https://nominatim.openstreetmap.org/search?q=305+westhampton+road,+northampton+ma&format=json");
-	    		console.log(response);
+		   fetch("https://nominatim.openstreetmap.org/search?q=305+westhampton+road,+northampton+ma&format=json")
+	    		.then(console.log(response))
 //    			.then(response => response.json())
 //			   .then(console.log(response))
 	    
