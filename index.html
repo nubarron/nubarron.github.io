@@ -95,9 +95,10 @@
 //			.then(console.log(obj.lon))
 //    			.then(data => console.log(data))
 
-
+let url = "http://example.com/movies.json";
+	    
 (async () => {
- const response = await fetch("http://example.com/movies.json", { 
+ const response = await fetch(url, { 
                     method: 'GET', 
                     mode: 'no-cors', 
                     credentials: 'include' });
