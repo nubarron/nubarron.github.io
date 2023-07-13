@@ -60,8 +60,8 @@
      
     // This function (`page`) will get called for each page of records.
 
-		fetch("https://nominatim.openstreetmap.org/search?q=305+westhampton+road,+northampton+ma&format=json")
-	    		.then(console.log(response))
+//		fetch("https://nominatim.openstreetmap.org/search?q=305+westhampton+road,+northampton+ma&format=json")
+//	    		.then(console.log(response))
 
     records.forEach(function(record) {
         console.log('Retrieved', record.get('Name'));
@@ -94,9 +94,9 @@
 //			.then(console.log(obj.lon))
 //    			.then(data => console.log(data))
 
-//	    const response = await fetch("http://example.com/movies.json");
-//  const movies = await response.json();
-//  console.log(movies);
+	    const response = await fetch("http://example.com/movies.json");
+  const movies = await response.json();
+  console.log(movies);
 
 	    
 	    
