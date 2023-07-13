@@ -61,8 +61,8 @@
      
     // This function (`page`) will get called for each page of records.
 
-//		fetch("https://nominatim.openstreetmap.org/search?q=305+westhampton+road,+northampton+ma&format=json")
-//	    		.then(console.log(response))
+		fetch("https://nominatim.openstreetmap.org/search?q=305+westhampton+road,+northampton+ma&format=json")
+	    		.then(console.log(response))
 
     records.forEach(function(record) {
         console.log('Retrieved', record.get('Name'));
@@ -102,7 +102,7 @@
 	    console.log(url);
 
 	    
-(async () => {
+/*(async () => {
  const response = await fetch(url, { 
                     method: 'GET', 
                     headers: {
@@ -112,7 +112,7 @@
   const movies = await response.json();
   console.log(movies);
 })();
-    
+  */  
 	   // const response = await fetch("http://example.com/movies.json");
   //const movies = await response.json();
   //console.log(movies);
