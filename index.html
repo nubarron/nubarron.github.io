@@ -98,12 +98,13 @@
 	    
 //let url = 'http://example.com/movies.json';
 
-	    let url = 'https://nominatim.openstreetmap.org/search?q=305+westhampton+road,+northampton+ma&format=json';
+	    let url = 'https://nominatim.openstreetmap.org/search?q=305+westhampton+road,+northampton+ma';
 	    
 (async () => {
  const response = await fetch(url, { 
                     method: 'GET', 
                     mode: 'no-cors', 
+	 		format: 'json',
                     credentials: 'include' });
   const movies = await response.json();
   console.log(movies);
