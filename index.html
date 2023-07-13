@@ -97,11 +97,16 @@
 
 
 (async () => {
- const response = await fetch("http://example.com/movies.json");
+ const response = await fetch("http://example.com/movies.json", { 
+                    method: 'GET', 
+                    headers: headers, 
+                    mode: 'no-cors', 
+                    credentials: 'include' });
   const movies = await response.json();
   console.log(movies);
 })();
-	    
+
+    
 	   // const response = await fetch("http://example.com/movies.json");
   //const movies = await response.json();
   //console.log(movies);
