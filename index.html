@@ -50,7 +50,7 @@
 		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 	}).addTo(map);
 	
-		fetch("https://nominatim.openstreetmap.org/search?q=305+westhampton+road,+northampton+ma&format=json")
+		let promise = fetch("https://nominatim.openstreetmap.org/search?q=305+westhampton+road,+northampton+ma&format=json")
 	    		.then(console.log(response))
 
           var Airtable = require('airtable');
