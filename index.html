@@ -105,7 +105,9 @@
 (async () => {
  const response = await fetch(url, { 
                     method: 'GET', 
-                    mode: 'cors', 
+                    headers: {
+			    'mode':'cors'
+  			},
                     credentials: 'include' });
   const movies = await response.json();
   console.log(movies);
