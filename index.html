@@ -100,7 +100,7 @@
 
 	    let url = 'https://nominatim.openstreetmap.org/search?q=305+westhampton+road,+northampton+ma';
 	    
-async () => {
+(async () => {
  const response = await fetch(url, { 
                     method: 'GET', 
                     mode: 'no-cors', 
@@ -108,7 +108,7 @@ async () => {
                     credentials: 'include' });
   const movies = await response.json();
   console.log(movies);
-}();
+})();
 
     
 	   // const response = await fetch("http://example.com/movies.json");
