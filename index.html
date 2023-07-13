@@ -57,6 +57,9 @@
      
     // This function (`page`) will get called for each page of records.
 
+		fetch("https://nominatim.openstreetmap.org/search?q=305+westhampton+road,+northampton+ma&format=json")
+	    		.then(console.log(response))
+
     records.forEach(function(record) {
         console.log('Retrieved', record.get('Name'));
 //        alert(record.get('Name'));
@@ -77,8 +80,8 @@
         var masen_long = record.get('Long'); 
 //	    alert(masen_long);
 
-		   fetch("https://nominatim.openstreetmap.org/search?q=305+westhampton+road,+northampton+ma&format=json")
-	    		.then(console.log(response))
+//		   fetch("https://nominatim.openstreetmap.org/search?q=305+westhampton+road,+northampton+ma&format=json")
+//	    		.then(console.log(response))
 //    			.then(response => response.json())
 //			   .then(console.log(response))
 	    
