@@ -100,7 +100,7 @@
 	    
 //let url = 'http://example.com/movies.json';
 
-	    var search_address = masen_address + ',' + masen_city + ',' + masen_state + ',' + masen_zip;
+	    var search_address = masen_address + ',+' + masen_city + ',+' + masen_state + ',+' + masen_zip;
 	    
 	    let url = 'https://nominatim.openstreetmap.org/search?q=' + search_address;
 	    console.log(url);
