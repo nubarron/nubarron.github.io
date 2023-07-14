@@ -78,7 +78,7 @@
 	var masen_desc = record.get('Description'); // test
 //	    alert(masen_desc);
 	var masen_address = record.get('Address');
-	    masen_address = masen_address.replace(/" "/gi,"+");
+	    masen_address = masen_address.replace(/\s/gi,"+");
 	var masen_city = record.get('City');
 	var masen_state = record.get('State');
 	var masen_zip = record.get('Zip Code');
