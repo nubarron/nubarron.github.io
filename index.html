@@ -105,10 +105,8 @@
 	//    console.log(url);
 	    
 	    
-	    var response = fetch("https://nominatim.openstreetmap.org/search?q=305+westhampton+road,+northampton+ma&format=json");
-	//    response => response.json();
-
-	    
+	    var response = fetch(url);
+	    response => response.json();
 	    console.log(response(lat));
 //			.then(console.log(obj.lon))
 	    alert(response(lon));
