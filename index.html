@@ -101,11 +101,11 @@
 //let url = 'http://example.com/movies.json';
 
 	    
-	    let url = 'https://nominatim.openstreetmap.org/search?q=' + masen_address + masen_city + masen_state + masen_zip;
+	    let url = 'https://nominatim.openstreetmap.org/search?q=' + masen_address + ' ' + masen_city + ' ' + masen_state + ' ' + masen_zip;
 	    console.log(url);
 	    
 	    
-	    var response = fetch(url);
+	    let response = fetch(url);
 	    response => response.json();
 	    console.log(response(lat));
 //			.then(console.log(obj.lon))
