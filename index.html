@@ -54,7 +54,7 @@
 		let response = fetch("https://nominatim.openstreetmap.org/search?q=305+westhampton+road,+northampton+ma&format=json");
 //	response => response.json());
 	(console.log(response));
-	alert(response(lat));
+	alert(response.0.lat);
 
 	
           var Airtable = require('airtable');
