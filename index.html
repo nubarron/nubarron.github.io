@@ -108,7 +108,7 @@
 
 	    var search_address = masen_address + ',+' + masen_city + ',+' + masen_state + ',+' + masen_zip;
 	    
-	    let url = 'https://nominatim.openstreetmap.org/search?q=' + search_address + '&format=json';
+	    let url = 'https://nominatim.openstreetmap.org/search?q=' + search_address + '&format=json&addressdetails=1';
 	    alert(url);
 	    
 	    /*
@@ -122,7 +122,7 @@
 	    let response = fetch(url);
 	response => response.json();
 	(console.log(response));
-    alert(response);
+    alert(response.lat);
 	    /*
 (async () => {
  const response = await fetch(url, { 
