@@ -113,6 +113,9 @@
 //    	    let url = 'https://nominatim.openstreetmap.org/?format=json&addressdetails=1&q={$search_address}&format=json&limit=1';
 	    alert(url);
 	    
+	     $.get(location.protocol + '//nominatim.openstreetmap.org/search?format=json&q='+search_address, function(data){
+       console.log(data);
+    });
 	    /*
 	    let response = fetch(url);
 	    response => response.json();
@@ -121,10 +124,10 @@
 	    alert(response(lon));
 //	(console.log(response));
 	    */
-	    let response = fetch(url);
-	response => response.json();
-	(console.log(response));
-    alert(response.lat);
+//	    let response = fetch(url);
+//	response => response.json();
+//	(console.log(response));
+//    alert(response.lat);
 	    /*
 (async () => {
  const response = await fetch(url, { 
