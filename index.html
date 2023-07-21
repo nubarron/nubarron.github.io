@@ -57,6 +57,16 @@ form.addEventListener('submit', async (event) => {
   console.log(results); // » [{}, {}, {}, ...]
 });
 
+	const result = {
+  x: Number, // lon,
+  y: Number, // lat,
+  label: String, // formatted address
+  bounds: [
+    [Number, Number], // s, w - lat, lon
+    [Number, Number], // n, e - lat, lon
+  ],
+  raw: {}, // raw provider result
+};
 	
 	// The following sets the bounds for the state of Massachusetts. These coordinates were generated in OpenStreetMaps.
 	var map = L.map('map').fitBounds([
