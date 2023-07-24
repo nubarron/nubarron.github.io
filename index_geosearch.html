@@ -121,6 +121,7 @@
 	    var mas_latLng = geocoder.geocode(search_address, function(results) {    
 		latLng= new L.LatLng(results[0].center.lat, results[0].center.lng);
 		var LAT = results[0].center.lat;
+		    masenpop = L.marker(latLng.addTo(map));
 //       marker = new L.Marker (latLng);
 		    alert("uno (2): " + latLng);
 		    alert(LAT);
@@ -128,11 +129,11 @@
 //       map.addlayer(marker);
 });
 
-	        alert(mas_latLng);
+//	        alert(mas_latLng);
 	    
-var masenpop = L.marker(mas_latLng.addTo(map));
+//var masenpop = L.marker(mas_latLng.addTo(map));
 
-	    L.marker([50.5, 30.5]).addTo(map);
+//	    L.marker([50.5, 30.5]).addTo(map);
 	    
 //	    let url = 'https://nominatim.openstreetmap.org/?format=json&addressdetails=1&search?q=' + search_address + '&format=json&limit=1';
 
