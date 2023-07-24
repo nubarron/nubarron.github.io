@@ -120,6 +120,7 @@
 	    geocoder.geocode(yourQuery, function(results) {    
        latLng= new L.LatLng(results[0].center.lat, results[0].center.lng);
        marker = new L.Marker (latLng);
+		    alert(latLng);
        map.addlayer(marker);
 });
 	    
