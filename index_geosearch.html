@@ -124,11 +124,12 @@
 		    alert(latLng);
 //       map.addlayer(marker);
 });
+	var masenpop = L.marker(latLng.addTo(map));
 	    
-	    let url = 'https://nominatim.openstreetmap.org/?format=json&addressdetails=1&search?q=' + search_address + '&format=json&limit=1';
+//	    let url = 'https://nominatim.openstreetmap.org/?format=json&addressdetails=1&search?q=' + search_address + '&format=json&limit=1';
 
 //    	    let url = 'https://nominatim.openstreetmap.org/?format=json&addressdetails=1&q={$search_address}&format=json&limit=1';
-	    alert(url);
+//	    alert(url);
 	    
 //	     $.get(location.protocol + '//nominatim.openstreetmap.org/search?format=json&q='+search_address, function(data){
 //       console.log(data);
@@ -167,7 +168,6 @@
 	    
 	    
 	    
-	var masenpop = L.marker(latLng.addTo(map));
 
 //	    masenpop.bindTooltip(masen_name).openTooltip();
 //	    masenpop.bindPopup(masen_name + '<b \>' + masen_desc).openPopup();
