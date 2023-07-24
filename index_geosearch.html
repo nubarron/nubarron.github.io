@@ -116,8 +116,9 @@
 //let url = 'http://example.com/movies.json';
 
 	    var search_address = masen_address + ',+' + masen_city + ',+' + masen_state + ',+' + masen_zip;
-
-	    geocoder.geocode(yourQuery, function(results) {    
+	    alert(search_address);
+	    
+	    geocoder.geocode(search_address, function(results) {    
        latLng= new L.LatLng(results[0].center.lat, results[0].center.lng);
        marker = new L.Marker (latLng);
 		    alert(latLng);
