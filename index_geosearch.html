@@ -120,11 +120,12 @@
 	    
 	    geocoder.geocode(search_address, function(results) {    
        latLng= new L.LatLng(results[0].center.lat, results[0].center.lng);
-       marker = new L.Marker (latLng);
+		    	var masenpop = L.marker(latLng.addTo(map));
+//       marker = new L.Marker (latLng);
 		    alert(latLng);
 //       map.addlayer(marker);
 });
-	var masenpop = L.marker(latLng.addTo(map));
+
 	    
 //	    let url = 'https://nominatim.openstreetmap.org/?format=json&addressdetails=1&search?q=' + search_address + '&format=json&limit=1';
 
