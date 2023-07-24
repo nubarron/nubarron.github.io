@@ -119,21 +119,16 @@
 	    alert(search_address);
 	    
 	    var mas_latLng = geocoder.geocode(search_address, function(results) {    
-		window.latLng= new L.LatLng(results[0].center.lat, results[0].center.lng);
-		    	var LAT = results[0].center.lat;
-
-		    
+		latLng= new L.LatLng(results[0].center.lat, results[0].center.lng);
+		var LAT = results[0].center.lat;
 //       marker = new L.Marker (latLng);
-		    
 		    alert("uno (2): " + latLng);
 		    alert(LAT);
-
 		    return(latLng);
-		    
 //       map.addlayer(marker);
 });
 
-	        alert("dos: " + mas_latLng);
+	        alert(mas_latLng);
 	    
 var masenpop = L.marker(mas_latLng.addTo(map));
 
