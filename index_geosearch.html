@@ -118,7 +118,7 @@
 	    var search_address = masen_address + ',+' + masen_city + ',+' + masen_state + ',+' + masen_zip;
 	    alert(search_address);
 	    
-	    geocoder.geocode(search_address, function(results) {    
+	    var mas_latlng = geocoder.geocode(search_address, function(results) {    
 		window.latLng= new L.LatLng(results[0].center.lat, results[0].center.lng);
 		    	var LAT = results[0].center.lat;
 
@@ -127,6 +127,8 @@
 		    
 		    alert("uno (2): " + latLng);
 		    alert(LAT);
+
+		    return(latLng);
 		    
 //       map.addlayer(marker);
 });
