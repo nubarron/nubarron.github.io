@@ -116,8 +116,8 @@
 	    alert(search_address);
 	    
 	    var LL = geocoder.geocode(search_address, function(results) {    
-		latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
-		LAT = results[0].center.lat;
+		var latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
+		var LAT = results[0].center.lat;
 //		    masenpop = L.marker(latLng.addTo(map));
 //       marker = new L.Marker (latLng);
 //		    var masenpop = L.marker(latLng).addTo(map);
