@@ -116,6 +116,12 @@
 //let url = 'http://example.com/movies.json';
 
 	    var search_address = masen_address + ',+' + masen_city + ',+' + masen_state + ',+' + masen_zip;
+
+	    geocoder.geocode(yourQuery, function(results) {    
+       latLng= new L.LatLng(results[0].center.lat, results[0].center.lng);
+       marker = new L.Marker (latLng);
+       map.addlayer(marker);
+});
 	    
 	    let url = 'https://nominatim.openstreetmap.org/?format=json&addressdetails=1&search?q=' + search_address + '&format=json&limit=1';
 
@@ -159,7 +165,7 @@
 	    
 	    
 	    
-	var masenpop = L.marker([masen_lat, masen_long]).addTo(map);
+//	var masenpop = L.marker([masen_lat, masen_long]).addTo(map);
 
 //	    masenpop.bindTooltip(masen_name).openTooltip();
 //	    masenpop.bindPopup(masen_name + '<b \>' + masen_desc).openPopup();
