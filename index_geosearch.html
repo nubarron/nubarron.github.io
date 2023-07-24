@@ -121,8 +121,8 @@
 	    var mas_latLng = geocoder.geocode(search_address, function(results) {    
 		latLng= new L.LatLng(results[0].center.lat, results[0].center.lng);
 		var LAT = results[0].center.lat;
-		    masenpop = L.marker(latLng.addTo(map));
-//       marker = new L.Marker (latLng);
+//		    masenpop = L.marker(latLng.addTo(map));
+       marker = new L.Marker (latLng);
 		    alert("uno (2): " + latLng);
 		    alert(LAT);
 		    return(latLng);
