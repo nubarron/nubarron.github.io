@@ -118,7 +118,7 @@
 	    var search_address = masen_address + ',+' + masen_city + ',+' + masen_state + ',+' + masen_zip;
 	    alert(search_address);
 	    
-	    var mas_latlng = geocoder.geocode(search_address, function(results) {    
+	    var mas_latLng = geocoder.geocode(search_address, function(results) {    
 		window.latLng= new L.LatLng(results[0].center.lat, results[0].center.lng);
 		    	var LAT = results[0].center.lat;
 
@@ -133,9 +133,9 @@
 //       map.addlayer(marker);
 });
 
-	        alert("dos: " + latLng);
+	        alert("dos: " + mas_latLng);
 	    
-var masenpop = L.marker(latLng.addTo(map));
+var masenpop = L.marker(mas_latLng.addTo(map));
 
 	    L.marker([50.5, 30.5]).addTo(map);
 	    
