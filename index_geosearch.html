@@ -118,18 +118,18 @@
 	    var search_address = masen_address + ',+' + masen_city + ',+' + masen_state + ',+' + masen_zip;
 	    alert(search_address);
 	    
-	    var mas_latLng = geocoder.geocode(search_address, function(results) {    
+	    geocoder.geocode(search_address, function(results) {    
 		latLng= new L.LatLng(results[0].center.lat, results[0].center.lng);
 		var LAT = results[0].center.lat;
 //		    masenpop = L.marker(latLng.addTo(map));
        marker = new L.Marker (latLng);
 		    alert("uno (2): " + latLng);
 		    alert(LAT);
-		    return(latLng);
+//		    return(latLng);
 //       map.addlayer(marker);
 });
 
-//	        alert(mas_latLng);
+//	        alert(latLng);
 	    
 //var masenpop = L.marker(mas_latLng.addTo(map));
 
