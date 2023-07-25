@@ -76,6 +76,7 @@
      
     // This function (`page`) will get called for each page of records.
 
+		 var latLng;
 
     records.forEach(function(record) {
         console.log('Retrieved', record.get('Name'));
@@ -115,7 +116,7 @@
 	    var search_address = masen_address + ',+' + masen_city + ',+' + masen_state + ',+' + masen_zip;
 	    alert(search_address);
 
-	    var latLng;
+	   
 	    alert("test 1: " + latLng);
 	    
 	   geocoder.geocode(search_address, function(results) {    
