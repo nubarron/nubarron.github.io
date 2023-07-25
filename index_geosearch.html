@@ -114,10 +114,14 @@
 
 	    var search_address = masen_address + ',+' + masen_city + ',+' + masen_state + ',+' + masen_zip;
 	    alert(search_address);
-	    
+
+	    var LAT;
+	    var LONG;
 	    LL = geocoder.geocode(search_address, function(results) {    
 		latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
-		var LAT = results[0].center.lat;
+		LAT = results[0].center.lat;
+		LONG = results[0].center.lng;
+		    
 //		    masenpop = L.marker(latLng.addTo(map));
 //       marker = new L.Marker (latLng);
 //		    var masenpop = L.marker(latLng).addTo(map);
