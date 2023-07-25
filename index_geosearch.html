@@ -118,6 +118,7 @@
 	    var latLng;
 	    
 	   geocoder.geocode(search_address, function(results) {    
+		   alert("test");
 		latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
 		LAT = results[0].center.lat;
 		LONG = results[0].center.lng;
