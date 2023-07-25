@@ -120,23 +120,18 @@
 	    
 	   geocoder.geocode(search_address, function(results) {    
 		latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
-		   alert("test");
-		   alert(latLng);
-
-	   });
-//		latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
-//		LAT = results[0].center.lat;
-//		LONG = results[0].center.lng;
+		LAT = results[0].center.lat;
+		LONG = results[0].center.lng;
 		    
 //		    masenpop = L.marker(latLng.addTo(map));
 //       marker = new L.Marker (latLng);
 //		    var masenpop = L.marker(latLng).addTo(map);
-//		    alert("uno (2): " + latLng);
-//		    alert(LAT);
+		    alert("uno (2): " + latLng);
+		    alert(LAT);
 //		    console.log(latLng);
 		
 //       map.addlayer(marker);
-//});
+});
 
 		console.log(latLng);
 	        alert(latLng);
