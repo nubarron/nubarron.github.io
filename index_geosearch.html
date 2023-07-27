@@ -85,7 +85,7 @@
 	    		alert(search_address);
 
 			geocoder.geocode(search_address, function(results) {    
-				latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
+				var latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
 				LAT = results[0].center.lat;
 				LONG = results[0].center.lng;
 				//var masenpop = L.marker(latLng).addTo(map);
