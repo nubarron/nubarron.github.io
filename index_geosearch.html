@@ -86,8 +86,8 @@
 
 			geocoder.geocode(search_address, function(results) {    
 				var latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
-				LAT = results[0].center.lat;
-				LONG = results[0].center.lng;
+				var LAT = results[0].center.lat;
+				var LONG = results[0].center.lng;
 				//var masenpop = L.marker(latLng).addTo(map);
 		    		alert("uno (2): " + latLng);
 		    		alert(LAT);
