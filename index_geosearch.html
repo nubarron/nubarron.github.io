@@ -86,19 +86,20 @@
 			var search_address = masen_address + ',+' + masen_city + ',+' + masen_state + ',+' + masen_zip;
 	    		alert(search_address);
 
-				var LAT;
+				
 
-			geocoder.geocode(search_address, function(results) {    
+			x = geocoder.geocode(search_address, function(results) {    
 				var latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
 				LAT = results[0].center.lat;
 				var LONG = results[0].center.lng;
 //				var masenpop = L.marker(latLng).addTo(map);
 		    		alert("uno (2): " + latLng);
 		    		alert(LAT);
+					return(latLng);
 			});
 
 //			alert("uno (2): " + latLng);
-		    		alert(LAT);
+		    		alert(x);
 		    
 		});
     // To fetch the next page of records, call `fetchNextPage`.
