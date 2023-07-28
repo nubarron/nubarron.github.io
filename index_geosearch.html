@@ -107,8 +107,8 @@
 });
 	
 
-function getcoord(search)
-{			this.geocoder.geocode(search_address, function(results) {    
+function getcoord(search) {
+				geocoder.geocode(search, function(results) {    
 //				latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
 				//L3 = toString(latLng);
 				var LAT = results[0].center.lat;
@@ -117,8 +117,8 @@ function getcoord(search)
 		    		alert("uno (2): " + LAT + LONG);
 //		    		alert(LAT);
 //					return latLng;
-			});
-}
+})
+}			
 	</script>	
 
 </body>
