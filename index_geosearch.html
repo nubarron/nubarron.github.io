@@ -90,10 +90,10 @@
 
 			geocoder.geocode(search_address, function(results) {    
 				latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
-				L3 = toString(latLng);
+				//L3 = toString(latLng);
 				LAT = results[0].center.lat;
 				var LONG = results[0].center.lng;
-				var masenpop = L.marker(latLng).addTo(map);
+				var masenpop = L.marker(LAT,",",LONG).addTo(map);
 		    		alert("uno (2): " + latLng);
 		    		alert(LAT);
 					return latLng;
