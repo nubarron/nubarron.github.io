@@ -86,18 +86,8 @@
 			var search_address = masen_address + ',+' + masen_city + ',+' + masen_state + ',+' + masen_zip;
 	    	alert(search_address);
 
-			if(search_address) {
-			this.geocoder.geocode(search_address, function(results) {    
-//				latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
-				//L3 = toString(latLng);
-				var LAT = results[0].center.lat;
-				var LONG = results[0].center.lng;
-//				var masenpop = L.marker(LAT+","+LONG).addTo(map);
-		    		alert("uno (2): " + LAT + LONG);
-//		    		alert(LAT);
-//					return latLng;
-			});
-		}
+			getcoord(search_address);
+		
 
 //			alert("uno (2): " + latLng);
 //		    		alert(latLng);
@@ -116,6 +106,19 @@
     if (err) { console.error(err); return; }
 });
 	
+
+function getcoord(search)
+{			this.geocoder.geocode(search_address, function(results) {    
+//				latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
+				//L3 = toString(latLng);
+				var LAT = results[0].center.lat;
+				var LONG = results[0].center.lng;
+				var masenpop = L.marker(LAT+","+LONG).addTo(map);
+		    		alert("uno (2): " + LAT + LONG);
+//		    		alert(LAT);
+//					return latLng;
+			});
+}
 	</script>	
 
 </body>
