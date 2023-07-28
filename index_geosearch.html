@@ -92,7 +92,7 @@
 				latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
 				LAT = results[0].center.lat;
 				var LONG = results[0].center.lng;
-//				var masenpop = L.marker(latLng).addTo(map);
+				var masenpop = L.marker(latLng).addTo(map);
 		    		alert("uno (2): " + latLng);
 		    		alert(LAT);
 					return latLng;
@@ -102,7 +102,7 @@
 		    		alert(latLng);
 					alert(LAT);
 					alert(LONG);
-				var masenpop = L.marker(LAT + "," + LONG).addTo(map);
+//				var masenpop = L.marker(LAT + "," + LONG).addTo(map);
 		    
 		});
     // To fetch the next page of records, call `fetchNextPage`.
