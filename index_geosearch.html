@@ -109,8 +109,10 @@ function getData(record) {
 	
 		var search_address = masen_address + ',+' + masen_city + ',+' + masen_state + ',+' + masen_zip;
 		alert(search_address);
-		var x = geocoder.geocode(search_address, function(results) {    
+
+		x = geocoder.geocode(search_address, function(results) {    
 			latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
+			return(latLng)
 		})
 //		myCallback(search_address);
 
