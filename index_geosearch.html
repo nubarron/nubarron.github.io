@@ -67,7 +67,7 @@
 	
 	     records.forEach(function(record) {
 				getData(record);
-				getcoord(search_address);
+//				getcoord(search_address);
 					alert(L2);
 					alert(LONG);
 		
@@ -89,7 +89,7 @@
     if (err) { console.error(err); return; }
 });
 
-function getData(record) {
+function getData(record, myCallback) {
 	console.log('Retrieved', record.get('Name'));
 			
 			var masen_name = record.get('Name');  
@@ -109,6 +109,7 @@ function getData(record) {
 	
 		var search_address = masen_address + ',+' + masen_city + ',+' + masen_state + ',+' + masen_zip;
 		alert(search_address);
+		myCallback(getcoord(search_address));
 
 }
 
@@ -122,7 +123,7 @@ function getcoord(search_address) {
 		    		alert("uno (2): " + LAT + LONG);
 //		    		alert(LAT);
 //					return LAT;
-					myCallback(LAT);
+//					myCallback(LAT);
 })
 }			
 	</script>	
