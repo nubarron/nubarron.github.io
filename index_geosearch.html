@@ -115,7 +115,7 @@ function getData(record, myCallback) {
 
 function getcoord(search_address) {
 				geocoder.geocode(search_address, function(results) {    
-//				latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
+				latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
 				//L3 = toString(latLng);
 				var LAT = results[0].center.lat;
 				var LONG = results[0].center.lng;
