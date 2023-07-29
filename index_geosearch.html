@@ -65,7 +65,7 @@
 	    // This function (`page`) will get called for each page of records.
 
 	
-	     records.forEach(function(record, L2) {
+	     records.forEach(function(record, myCallback) {
         		console.log('Retrieved', record.get('Name'));
 			
 		    	var masen_name = record.get('Name');  
@@ -88,7 +88,7 @@
 
 			var L2 = getcoord(search_address);
 					alert(L2);
-//					alert(LONG);
+					alert(LONG);
 		
 
 //			alert("uno (2): " + latLng);
@@ -118,7 +118,8 @@ function getcoord(search) {
 //				var masenpop = L.marker(LAT+","+LONG).addTo(map);
 		    		alert("uno (2): " + LAT + LONG);
 //		    		alert(LAT);
-					return LAT;
+//					return LAT;
+					myCallback(LAT);
 })
 }			
 	</script>	
