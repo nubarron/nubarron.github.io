@@ -37,7 +37,7 @@
 	<div id="map"></div>
 
 	<script>		
-//	var geocoder = new L.Control.Geocoder.nominatim();
+	var geocoder = new L.Control.Geocoder.nominatim();
 			
 		// The following sets the bounds for the state of Massachusetts. These coordinates were generated in OpenStreetMaps.
 		var map = L.map('map').fitBounds([
@@ -56,7 +56,7 @@
           	var base = new Airtable({apiKey: 'patHXMh9QL5KMwJzG.d5cc1651970c910d9faab7bd5246c025f994540188a71e4c9dad38d6c1192f94'}).base('appBW71DB555EyIBL');
 
 
-			base('Map_source').select({
+			  base('Map_source').select({
     			// Selecting the first 3 records in Grid view:
     			maxRecords: 3,
     			view: "Grid view"
@@ -65,19 +65,44 @@
 	    // This function (`page`) will get called for each page of records.
 
 	
-	     records.forEach(function(record) {
-				getData(record);
-//				getcoord(search_address);
-//					alert(LAT);
-//					alert(LONG);
-		
+	    records.forEach(function(record) {
+        		console.log('Retrieved', record.get('Name'));
+			
+		    	var masen_name = record.get('Name');  
+	    		alert(masen_name);
+	    
+			var masen_desc = record.get('Description'); // test
+			var masen_address = record.get('Address');
+	    		masen_address = masen_address.replace(/\s/gi,"+");
+			var masen_city = record.get('City');
+			var masen_state = record.get('State');
+			var masen_zip = record.get('Zip Code');
+		        var masen_lat = record.get('Lat'); 
+			//	    alert(masen_lat);
+        		var masen_long = record.get('Long'); 
+			//	    alert(masen_long);
+
+	    
+			var search_address = masen_address + ',+' + masen_city + ',+' + masen_state + ',+' + masen_zip;
+	    		alert(search_address);
+
+				
+
+			geocoder.geocode(search_address, function(results) {    
+				latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
+				LAT = results[0].center.lat;
+				var LONG = results[0].center.lng;
+//				var masenpop = L.marker(latLng).addTo(map);
+		    		alert("uno (2): " + latLng);
+		    		alert(LAT);
+					return latLng;
+			});
 
 //			alert("uno (2): " + latLng);
-//		    		alert(latLng);
-//					alert(LAT);
-//					alert(LONG);
-//				var masenpop = L.marker(latLng).addTo(map);
-//				var masenpop = L.marker(LAT+","+LONG).addTo(map);
+		    		alert(latLng);
+					alert(LAT);
+					alert(LONG);
+				var masenpop = L.marker(LAT + "," + LONG).addTo(map);
 		    
 		});
     // To fetch the next page of records, call `fetchNextPage`.
@@ -88,49 +113,7 @@
 }, function done(err) {
     if (err) { console.error(err); return; }
 });
-
-function getData(record) {
-	console.log('Retrieved', record.get('Name'));
-			
-			var masen_name = record.get('Name');  
-			alert(masen_name);
 	
-		var masen_desc = record.get('Description'); // test
-		var masen_address = record.get('Address');
-			masen_address = masen_address.replace(/\s/gi,"+");
-		var masen_city = record.get('City');
-		var masen_state = record.get('State');
-		var masen_zip = record.get('Zip Code');
-//			var masen_lat = record.get('Lat'); 
-		//	    alert(masen_lat);
-//			var masen_long = record.get('Long'); 
-		//	    alert(masen_long);
-
-	
-		var search_address = masen_address + ',+' + masen_city + ',+' + masen_state + ',+' + masen_zip;
-		alert(search_address);
-
-		x = geocoder.geocode(search_address, function(results) {    
-			latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
-			return(latLng)
-		})
-//		myCallback(search_address);
-
-}
-
-function getcoord(search) {
-				geocoder.geocode(search, function(results) {    
-				latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
-				//L3 = toString(latLng);
-				var LAT = results[0].center.lat;
-				var LONG = results[0].center.lng;
-//				var masenpop = L.marker(LAT+","+LONG).addTo(map);
-		    		alert("uno (2): " + LAT + LONG);
-//		    		alert(LAT);
-//					return LAT;
-//					myCallback(LAT);
-})
-}			
 	</script>	
 
 </body>
