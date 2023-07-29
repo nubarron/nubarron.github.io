@@ -66,7 +66,7 @@
 
 	
 	     records.forEach(function(record) {
-				getData(record);
+				getData(record, getcoord);
 //				getcoord(search_address);
 					alert(L2);
 					alert(LONG);
@@ -109,7 +109,7 @@ function getData(record, myCallback) {
 	
 		var search_address = masen_address + ',+' + masen_city + ',+' + masen_state + ',+' + masen_zip;
 		alert(search_address);
-		myCallback(getcoord(search_address));
+		myCallback(search_address);
 
 }
 
