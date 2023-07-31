@@ -88,8 +88,6 @@
 			var search_address = masen_address + ',+' + masen_city + ',+' + masen_state + ',+' + masen_zip;
 	    		alert(search_address);
 
-				setTimeout(() => {  
-
 			geocoder.geocode(search_address, function(results) {    
 				latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
 //				LAT = results[0].center.lat;
@@ -101,7 +99,6 @@
 		    		alert(LAT);
 //					return latLng;
 			});
-			}, 5000);
 
 			
 //			alert("uno (2): " + latLng);
@@ -110,7 +107,7 @@
 //					alert(LONG);
 //				var masenpop = L.marker(LAT + "," + LONG).addTo(map);
 		    
-		});
+		};
     // To fetch the next page of records, call `fetchNextPage`.
     // If there are more records, `page` will get called again.
     // If there are no more records, `done` will get called.
