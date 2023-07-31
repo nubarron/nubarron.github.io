@@ -66,7 +66,7 @@
 	
 //	    records.forEach(function(record) {
 		for (const record of records) {
-			await function(record){
+//			function(record){
 				  console.log('Retrieved', record.get('Name'));
 			
 		    	var masen_name = record.get('Name');  
@@ -87,7 +87,7 @@
 			var search_address = masen_address + ',+' + masen_city + ',+' + masen_state + ',+' + masen_zip;
 	    		alert(search_address);
 
-			geocoder.geocode(search_address, function(results) {    
+			await geocoder.geocode(search_address, function(results) {    
 				latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
 //				LAT = results[0].center.lat;
 //				var LONG = results[0].center.lng;
@@ -98,7 +98,7 @@
 		    		alert(LAT);
 //					return latLng;
 			});
-		}
+//		}
 			
 //			alert("uno (2): " + latLng);
 //		    		alert(latLng);
