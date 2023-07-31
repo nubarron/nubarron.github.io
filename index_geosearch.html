@@ -65,7 +65,7 @@
 
 	
 //	    records.forEach(function(record) {
-		for await (const record of records) {
+		for (const record of records) {
 //			function(record){
 				  console.log('Retrieved', record.get('Name'));
 			
@@ -99,7 +99,7 @@
 //					return latLng;
 			});
 
-			await alert(masen_city);
+			await alert(LAT);
 //		}
 			
 //			alert("uno (2): " + latLng);
