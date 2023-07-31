@@ -84,10 +84,12 @@
 			//	    alert(masen_long);
 			
 	    
-			var search_address = masen_address + ',+' + masen_city + ',+' + masen_state + ',+' + masen_zip;
-	    		alert(search_address);
+			seach_long = "search_address" + [result];
 
-			geocoder.geocode(search_address, await function(results) {    
+			var search_long = masen_address + ',+' + masen_city + ',+' + masen_state + ',+' + masen_zip;
+	    		alert(search_long);
+
+			geocoder.geocode(search_long, await function(results) {    
 				latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
 				LAT = results[0].center.lat;
 //				var LONG = results[0].center.lng;
