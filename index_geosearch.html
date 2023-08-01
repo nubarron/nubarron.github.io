@@ -122,13 +122,14 @@ rl = 2;
 
 async function* asyncGenerator() {
 	let i = 0;
-	while (i < 3) {
+	while (i < 2) {
 	  yield i++;
 	}
   }
   
   (async () => {
-	for await (const num of asyncGenerator()) {
+	for await (const i of asyncGenerator()) {
+		
 		geocoder.geocode(search_address[i], await function(results) {    
 				alert(search_address[i]);
 				latLng[i] = new L.LatLng(results[0].center.lat, results[0].center.lng);
