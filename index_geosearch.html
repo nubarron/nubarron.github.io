@@ -39,16 +39,6 @@
 	<script>		
 	var geocoder = new L.Control.Geocoder.nominatim();
 			
-		// The following sets the bounds for the state of Massachusetts. These coordinates were generated in OpenStreetMaps.
-		var map = L.map('map').fitBounds([
-    			[42.8981, -73.8391],
-    			[41.1766, -69.5270]
-		]);
-	
-		L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-			maxZoom: 13,
-			attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-		}).addTo(map);
 
 //		L.Control.geocoder().addTo(map);
 		
@@ -94,6 +84,7 @@
 	    		alert(search_address[i]);
 
 			pop_info[i] = masen_name + '<br><br><b>' + masen_desc + '</b><br><br>'+ masen_address + ', ' + masen_city + ', ' + masen_state + ', ' + masen_zip
+				alert(pop_info);
 
 			alert("i is:" + i);
 			i++;
@@ -114,6 +105,18 @@
 }, function done(err) {
     if (err) { console.error(err); return; }
 });
+
+		// The following sets the bounds for the state of Massachusetts. These coordinates were generated in OpenStreetMaps.
+		var map = L.map('map').fitBounds([
+    			[42.8981, -73.8391],
+    			[41.1766, -69.5270]
+		]);
+	
+		L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+			maxZoom: 13,
+			attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+		}).addTo(map);
+
 
 for(let i = 0; i < 2; i++) {
 geocoder.geocode(search_address[i], function(results) {    
