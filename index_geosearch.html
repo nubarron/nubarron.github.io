@@ -120,7 +120,7 @@
 
 	
 (async function(){
-for await (const record of records) {
+for await (const i of 2) {
 geocoder.geocode(search_address[i], await function(results) {    
 				alert(search_address[i]);
 				latLng[i] = new L.LatLng(results[0].center.lat, results[0].center.lng);
