@@ -117,10 +117,10 @@
 			attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 		}).addTo(map);
 
-
+rl = 2
 	
 (async function(){
-for await (const i of 2) {
+for await (const i of rl) {
 geocoder.geocode(search_address[i], await function(results) {    
 				alert(search_address[i]);
 				latLng[i] = new L.LatLng(results[0].center.lat, results[0].center.lng);
