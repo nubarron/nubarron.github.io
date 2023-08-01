@@ -89,7 +89,7 @@
 	    	search_address[i] = masen_address + ',+' + masen_city + ',+' + masen_state + ',+' + masen_zip;
 	    		alert(search_address[i]);
 
-			new geocoder.geocode(search_address[i], function(results) {    
+			geocoder.geocode(search_address[i], function(results) {    
 				alert(search_address[i]);
 				alert(results);
 				console.log(results);
