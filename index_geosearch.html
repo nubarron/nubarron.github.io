@@ -94,12 +94,12 @@
 				alert(results);
 				console.log(results);
 				latLng[i] = new L.LatLng(results[0].center.lat, results[0].center.lng);
-				LAT = results[0].center.lat;
+				LAT = results[i].center.lat;
 //				var LONG = results[0].center.lng;
 				var masenpop = L.marker(latLng[i]).addTo(map);
 				masenpop.bindPopup(masen_name + '<br><br><b>' + masen_desc + '</b><br><br>'+ masen_address + ', ' + masen_city + ', ' + masen_state + ', ' + masen_zip);
 
-		    		alert("uno (2): " + latLng);
+		    		alert("uno (2): " + latLng[i]);
 		    		alert(LAT);
 //					return latLng;
 			});
