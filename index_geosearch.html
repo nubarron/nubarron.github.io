@@ -71,9 +71,8 @@
 		for (const record of records) {
 //			function(record){
 				  console.log('Retrieved', record.get('Name'));
-			i++;
-
-		    	var masen_name = record.get('Name');  
+			
+				  var masen_name = record.get('Name');  
 	    		alert(masen_name);
 	    
 			var masen_desc = record.get('Description'); // test
@@ -103,6 +102,7 @@
 			});
 
 			alert("i is:" + i);
+			i++;
 //		}
 			
 //			alert("uno (2): " + latLng);
