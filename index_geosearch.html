@@ -114,16 +114,16 @@
 
 alert(rl);
 
-for(let i = 0; i < records.length; i++) {
+for(let i = 0; i < rl; i++) {
 geocoder.geocode(search_address[i], function(results) {    
 				alert(search_address[i]);
 				alert(results);
 				console.log(results);
-				latLng[i] = new L.LatLng(results[0].center.lat, results[0].center.lng);
-				LAT = results[i].center.lat;
+				latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
+				LAT = results.center.lat;
 //				var LONG = results[0].center.lng;
-				var masenpop = L.marker(latLng[i]).addTo(map);
-				masenpop.bindPopup(masen_name + '<br><br><b>' + masen_desc + '</b><br><br>'+ masen_address + ', ' + masen_city + ', ' + masen_state + ', ' + masen_zip);
+				var masenpop = L.marker(latLng).addTo(map);
+//				masenpop.bindPopup(masen_name + '<br><br><b>' + masen_desc + '</b><br><br>'+ masen_address + ', ' + masen_city + ', ' + masen_state + ', ' + masen_zip);
 
 		    		alert("uno (2): " + latLng[i]);
 		    		alert(LAT);
