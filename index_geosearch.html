@@ -119,7 +119,7 @@
 
 
 for(let i = 0; i < 2; i++) {
-geocoder.geocode(search_address[i], function(results) {    
+new geocoder.geocode(search_address[i], function(results) {    
 				alert(search_address[i]);
 				latLng[i] = new L.LatLng(results[0].center.lat, results[0].center.lng);
 				LAT = results[0].center.lat;
