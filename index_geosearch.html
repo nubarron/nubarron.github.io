@@ -55,7 +55,8 @@
 		var Airtable = require('airtable');
           	var base = new Airtable({apiKey: 'patHXMh9QL5KMwJzG.d5cc1651970c910d9faab7bd5246c025f994540188a71e4c9dad38d6c1192f94'}).base('appBW71DB555EyIBL');
 			var i = 0;
-
+			const search_address = [];
+			
 	  base('Map_source').select({
     			// Selecting the first 3 records in Grid view:
     			maxRecords: 3,
@@ -85,8 +86,7 @@
         		var masen_long = record.get('Long'); 
 			//	    alert(masen_long);
 			
-	    
-			search_address[i] = masen_address + ',+' + masen_city + ',+' + masen_state + ',+' + masen_zip;
+	    	search_address[i] = masen_address + ',+' + masen_city + ',+' + masen_state + ',+' + masen_zip;
 	    		alert(search_address[i]);
 
 			geocoder.geocode(search_address[i], await function(results) {    
