@@ -122,7 +122,7 @@ geocoder.geocode(search_address[i], function(results) {
 				LAT = results[0].center.lat;
 //				var LONG = results[0].center.lng;
 				var masenpop = L.marker(latLng).addTo(map);
-				masenpop.bindPopup(popinfo[i]);
+				masenpop.bindPopup(pop_info[i]);
 
 		    		alert("uno (2): " + latLng);
 		    		alert(LAT);
