@@ -56,6 +56,7 @@
           	var base = new Airtable({apiKey: 'patHXMh9QL5KMwJzG.d5cc1651970c910d9faab7bd5246c025f994540188a71e4c9dad38d6c1192f94'}).base('appBW71DB555EyIBL');
 			var i = 0;
 			const search_address = [];
+			const pop_info = [];
 //			const latLng = [];
 			var rl;
 			
@@ -92,6 +93,8 @@
 	    	search_address[i] = masen_address + ',+' + masen_city + ',+' + masen_state + ',+' + masen_zip;
 	    		alert(search_address[i]);
 
+			pop_info[i] = masen_name + '<br><br><b>' + masen_desc + '</b><br><br>'+ masen_address + ', ' + masen_city + ', ' + masen_state + ', ' + masen_zip
+
 			alert("i is:" + i);
 			i++;
 //		}
@@ -112,20 +115,16 @@
     if (err) { console.error(err); return; }
 });
 
-alert(rl);
-
 for(let i = 0; i < 2; i++) {
 geocoder.geocode(search_address[i], function(results) {    
 				alert(search_address[i]);
-				alert(results);
-				console.log(results);
 				latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
 				LAT = results[0].center.lat;
 //				var LONG = results[0].center.lng;
 				var masenpop = L.marker(latLng).addTo(map);
-//				masenpop.bindPopup(masen_name + '<br><br><b>' + masen_desc + '</b><br><br>'+ masen_address + ', ' + masen_city + ', ' + masen_state + ', ' + masen_zip);
+				masenpop.bindPopup(popinfo[i]);
 
-		    		alert("uno (2): " + latLng[i]);
+		    		alert("uno (2): " + latLng);
 		    		alert(LAT);
 //					return latLng;
 			});
