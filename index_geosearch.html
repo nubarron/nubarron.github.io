@@ -118,8 +118,10 @@
 		}).addTo(map);
 
 
-for(let i = 0; i < 2; i++) {
-new geocoder.geocode(search_address[i], function(results) {    
+	
+(async function(){
+for await (const record of records) {
+geocoder.geocode(search_address[i], await function(results) {    
 				alert(search_address[i]);
 				latLng[i] = new L.LatLng(results[0].center.lat, results[0].center.lng);
 				LAT = results[0].center.lat;
@@ -132,6 +134,7 @@ new geocoder.geocode(search_address[i], function(results) {
 //					return latLng;
 			});
 		}
+	})();
 	</script>	
 
 </body>
