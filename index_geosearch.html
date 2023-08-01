@@ -62,7 +62,7 @@
     			// Selecting the first 3 records in Grid view:
     			maxRecords: 3,
     			view: "Grid view"
-		}).eachPage(function page(records, fetchNextPage) {
+		}).eachPage(async function page(records, fetchNextPage) {
      
 	    // This function (`page`) will get called for each page of records.
 
@@ -89,7 +89,7 @@
 	    	search_address[i] = masen_address + ',+' + masen_city + ',+' + masen_state + ',+' + masen_zip;
 	    		alert(search_address[i]);
 
-			geocoder.geocode(search_address[i], function(results) {    
+			geocoder.geocode(search_address[i], await function(results) {    
 				alert(search_address[i]);
 				alert(results);
 				console.log(results);
