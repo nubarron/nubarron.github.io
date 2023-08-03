@@ -130,7 +130,7 @@ async function* asyncGenerator() {
   (async () => {
 	for await (const i of asyncGenerator()) {
 */		
-		geocoder.geocode(search_address[0], await function(results) {    
+		geocoder.geocode(search_address[0], function(results) {    
 				alert(search_address[0]);
 				latLng[0] = new L.LatLng(results[0].center.lat, results[0].center.lng);
 				LAT = results[0].center.lat;
@@ -144,7 +144,7 @@ async function* asyncGenerator() {
 			});
 //		}
 
-		geocoder.geocode(search_address[1], await function(results) {    
+		geocoder.geocode(search_address[1], function(results) {    
 				alert(search_address[1]);
 				latLng[1] = new L.LatLng(results[0].center.lat, results[0].center.lng);
 				LAT = results[0].center.lat;
