@@ -135,8 +135,6 @@ async function* asyncGenerator() {
 				latLng[0] = new L.LatLng(results[0].center.lat, results[0].center.lng);
 				LAT = results[0].center.lat;
 //				var LONG = results[0].center.lng;
-				var masenpop = L.marker(latLng[0]).addTo(map);
-				masenpop.bindPopup(pop_info[0]);
 
 		    		alert("uno (2): " + latLng[0]);
 		    		alert(LAT);
@@ -156,6 +154,10 @@ async function* asyncGenerator() {
 		    		alert(LAT);
 //					return latLng;
 			});
+
+
+			var masenpop = L.marker(latLng[0]).addTo(map);
+				masenpop.bindPopup(pop_info[0]);
 
 //	})();
 </script>	
