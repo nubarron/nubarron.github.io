@@ -119,7 +119,7 @@
 
 rl = 2;
 	
-/*
+
 async function* asyncGenerator() {
 	let i = 0;
 	while (i < 2) {
@@ -129,7 +129,7 @@ async function* asyncGenerator() {
   
   (async () => {
 	for await (const i of asyncGenerator()) {
-*/		
+		
 		geocoder.geocode(search_address[0], function(results) {    
 				alert(search_address[0]);
 				latLng[0] = new L.LatLng(results[0].center.lat, results[0].center.lng);
@@ -158,8 +158,8 @@ async function* asyncGenerator() {
 
 			var masenpop = L.marker(latLng[0]).addTo(map);
 				masenpop.bindPopup(pop_info[0]);
-
-//	})();
+		}
+	})();
 </script>	
 
 
