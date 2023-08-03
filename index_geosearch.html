@@ -90,13 +90,14 @@
 
 			geocoder.geocode(search_address, function(results) {    
 				latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
-//				LAT = results[0].center.lat;
-//				var LONG = results[0].center.lng;
+				LAT = results[0].center.lat;
+				var LONG = results[0].center.lng;
 				var masenpop = L.marker(latLng).addTo(map);
 				masenpop.bindPopup(masen_name + '<br><br><b>' + masen_desc + '</b><br><br>'+ masen_address + ', ' + masen_city + ', ' + masen_state + ', ' + masen_zip);
 
 		    		alert("uno (2): " + latLng);
 		    		alert(LAT);
+				alert(LONG);
 //					return latLng;
 			});
 
