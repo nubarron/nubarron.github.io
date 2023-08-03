@@ -89,6 +89,7 @@
 	    		alert(search_address);
 
 			x = geocoder.geocode(search_address);
+			latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
 			
 /*			geocoder.geocode(search_address, function(results) {    
 				latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
