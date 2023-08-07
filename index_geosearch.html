@@ -63,34 +63,34 @@
 		}).eachPage(function page(records, fetchNextPage) {
      
 	    // This function (`page`) will get called for each page of records.
-
+		var masen_name, masen_desc, masen_address, masen_city, masen_state, masen_zip, search_address, latlng, masen_pop;
 	
 //	    records.forEach(function(record) {
 		for (const record of records) {
 //			await function(record);
 				  console.log('Retrieved', record.get('Name'));
 			
-		    	var masen_name = record.get('Name');  
+		    	masen_name = record.get('Name');  
 	    		alert(masen_name);
 	    
-			var masen_desc = record.get('Description'); // test
-			var masen_address = record.get('Address');
+			masen_desc = record.get('Description'); // test
+			masen_address = record.get('Address');
 	    		masen_address = masen_address.replace(/\s/gi,"+");
-			var masen_city = record.get('City');
-			var masen_state = record.get('State');
-			var masen_zip = record.get('Zip Code');
-		        var masen_lat = record.get('Lat'); 
+			masen_city = record.get('City');
+			masen_state = record.get('State');
+			masen_zip = record.get('Zip Code');
+		        //var masen_lat = record.get('Lat'); 
 			//	    alert(masen_lat);
-        		var masen_long = record.get('Long'); 
+        		//var masen_long = record.get('Long'); 
 			//	    alert(masen_long);
 
 	    
-			var search_address = masen_address + ',+' + masen_city + ',+' + masen_state + ',+' + masen_zip;
+			search_address = masen_address + ',+' + masen_city + ',+' + masen_state + ',+' + masen_zip;
 	    		alert(search_address);
 
 			x = geocoder.geocode(search_address, function(results) {
 				latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
-				var masenpop = L.marker(latLng).addTo(map);
+				masenpop = L.marker(latLng).addTo(map);
 			});
 				
 /*			geocoder.geocode(search_address, function(results) {    
