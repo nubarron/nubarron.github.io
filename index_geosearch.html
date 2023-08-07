@@ -63,7 +63,7 @@
 		}).eachPage(function page(records, fetchNextPage) {
      
 	    // This function (`page`) will get called for each page of records.
-		var masen_name, masen_desc, masen_address, masen_city, masen_state, masen_zip, search_address, latlng, masen_pop;
+		var masen_name, masen_desc, masen_address, masen_city, masen_state, masen_zip, search_address, latLng, masen_pop;
 	
 //	    records.forEach(function(record) {
 		for (const record of records) {
@@ -91,10 +91,12 @@
 			x = geocoder.geocode(search_address, function(results) {
 				latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
 			});
-
+			
+			if (latLng){
 			masenpop = L.marker(latLng).addTo(map);
 			masenpop.bindPopup(masen_name + '<br><br><b>' + masen_desc + '</b><br><br>'+ masen_address + ', ' + masen_city + ', ' + masen_state + ', ' + masen_zip);
-
+			};
+			
 /*			geocoder.geocode(search_address, function(results) {    
 				latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
 				LAT = results[0].center.lat;
