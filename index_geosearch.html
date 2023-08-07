@@ -90,12 +90,12 @@
 
 			geocoder.geocode(search_address, function(results) {
 				latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
+				masenpop = L.marker(latLng).addTo(map);
+  			  	masenpop.bindPopup(masen_name + '<br><br><b>' + masen_desc + '</b><br><br>'+ masen_address + ', ' + masen_city + ', ' + masen_state + ', ' + masen_zip);
 			});
 			
 //			try {
-			  alert(latLng);
-			  masenpop = L.marker(latLng).addTo(map);
-			  masenpop.bindPopup(masen_name + '<br><br><b>' + masen_desc + '</b><br><br>'+ masen_address + ', ' + masen_city + ', ' + masen_state + ', ' + masen_zip);
+//			  alert(latLng);
 //              console.log('latLng is defined')
 //            } catch(e) {
 //			  console.log('latLng is not defined');
