@@ -63,7 +63,8 @@
 		}).eachPage(function page(records, fetchNextPage) {
      
 	    // This function (`page`) will get called for each page of records.
-		var masen_name, masen_desc, masen_address, masen_city, masen_state, masen_zip, search_address, latLng, masen_pop;
+		var masen_name, masen_desc, masen_address, masen_city, masen_state, masen_zip, search_address, masen_pop;
+		latLng;
 	
 //	    records.forEach(function(record) {
 		for (const record of records) {
