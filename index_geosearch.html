@@ -98,7 +98,6 @@
 			search_address = masen_address + ',+' + masen_city + ',+' + masen_state + ',+' + masen_zip;
 	    		alert(search_address);
 
-			mapAddress(search_address);
 
 //			try {
 //			  alert(latLng);
@@ -136,7 +135,10 @@
 }, function done(err) {
     if (err) { console.error(err); return; }
 });
-	
+
+mapAddress(search_address);
+
+
 	</script>	
 
 </body>
