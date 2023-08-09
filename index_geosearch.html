@@ -51,6 +51,8 @@
 		}).addTo(map);
 
 //		L.Control.geocoder().addTo(map);
+
+		var search_address;
 		
 		function mapAddress(address) {
 				geocoder.geocode(address, function(results) {
@@ -73,7 +75,7 @@
 		}).eachPage(function page(records, fetchNextPage) {
      
 	    // This function (`page`) will get called for each page of records.
-		var masen_name, masen_desc, masen_address, masen_city, masen_state, masen_zip, search_address, latLng, masen_pop, results;
+		var masen_name, masen_desc, masen_address, masen_city, masen_state, masen_zip, latLng, masen_pop, results;
 	
 //	    records.forEach(function(record) {
 		for (const record of records) {
