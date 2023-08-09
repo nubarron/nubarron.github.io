@@ -52,7 +52,7 @@
 
 //		L.Control.geocoder().addTo(map);
 		
-		function mapAddress(address) {
+		var x = function mapAddress(address) {
 				geocoder.geocode(address, function(results) {
 				latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
 				return latLng;
