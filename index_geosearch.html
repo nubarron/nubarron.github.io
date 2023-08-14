@@ -81,7 +81,16 @@
 //	    records.forEach(function(record) {
 		for (const record of records) {
 //			await function(record);
-				  console.log('Retrieved', record.get('Name'));
+
+			const dataObject = {
+		    	masen_name: record.get('Name'),  
+				masen_desc: record.get('Description'), // test
+				masen_address: record.get('Address').replace(/\s/gi,"+"),
+				masen_city: record.get('City'),
+				masen_state: record.get('State'),
+				masen_zip: record.get('Zip Code')
+				}
+							  console.log('Retrieved', dataObject.masen_name);
 			
 		    	masen_name = record.get('Name');  
 	    		alert(masen_name);
