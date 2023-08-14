@@ -58,8 +58,8 @@
 				geocoder.geocode(address, function(results) {
 				latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
 				
-				masenpop = L.marker(latLng).addTo(map);
-  			  	masenpop.bindPopup(pop);
+//				masenpop = L.marker(latLng).addTo(map);
+// 			  	masenpop.bindPopup(pop);
 				return latLng;
 			});
 		}
