@@ -92,23 +92,9 @@
 				}
 							  console.log('Retrieved', dataObject.masen_name);
 			
-		    	masen_name = record.get('Name');  
-	    		alert(masen_name);
+			popupData = dataObject.masen_name + '<br><br><b>' + dataObject.masen_desc + '</b><br><br>'+ dataObject.masen_address + ', ' + dataObject.masen_city + ', ' + dataObject.masen_state + ', ' + dataObject.masen_zip;
 	    
-			masen_desc = record.get('Description'); // test
-			masen_address = record.get('Address');
-	    		masen_address = masen_address.replace(/\s/gi,"+");
-			masen_city = record.get('City');
-			masen_state = record.get('State');
-			masen_zip = record.get('Zip Code');
-		        //var masen_lat = record.get('Lat'); 
-			//	    alert(masen_lat);
-        		//var masen_long = record.get('Long'); 
-			//	    alert(masen_long);
-
-			popupData = masen_name + '<br><br><b>' + masen_desc + '</b><br><br>'+ masen_address + ', ' + masen_city + ', ' + masen_state + ', ' + masen_zip;
-	    
-			search_address = masen_address + ',+' + masen_city + ',+' + masen_state + ',+' + masen_zip;
+			search_address = dataObject.masen_address + ',+' + dataObject.masen_city + ',+' + dataObject.masen_state + ',+' + dataObject.masen_zip;
 	    		alert(search_address);
 				mapAddress(search_address, popupData);
 
