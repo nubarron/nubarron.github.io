@@ -57,7 +57,7 @@
 		function mapAddress(address, pop) {
 			geocoder.geocode(address, function(results) {
 //				latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
-				latLng = new L.LatLng(results.center);
+				latLng = new L.LatLng(results[0].center);
 
 //				geocoder.geocode(address, (resultArray) => {
 //		          	if (resultArray.length > 0) {
