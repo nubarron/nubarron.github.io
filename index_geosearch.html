@@ -50,9 +50,9 @@
 			attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 		}).addTo(map);
 
-		L.Control.geocoder().addTo(map);
+//		L.Control.geocoder().addTo(map);
 
-		var search_address, popupData;
+		let search_address, popupData;
 		
 		async function mapAddress(address, pop) {
 				await geocoder.geocode(address, function(results) {
