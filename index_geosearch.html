@@ -58,7 +58,8 @@
 			geocoder.geocode(address, (resultArray) => {
 		          	if (resultArray.length > 0) {
         		    const result = resultArray[0];
-      	      		const latlng = result.center;
+      	      		const latLng = result.center;
+					alert(latLng);
 					masenpop = L.marker(latLng).addTo(map);
  			  		masenpop.bindPopup(pop);
 
