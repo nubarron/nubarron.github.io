@@ -50,14 +50,14 @@
 			attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 		}).addTo(map);
 
-//		L.Control.geocoder().addTo(map);
+		L.Control.geocoder().addTo(map);
 
 		let search_address, popupData, latLng;
 		
 		function mapAddress(address, pop) {
 			geocoder.geocode(address, function(results) {
-//				latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
-				latLng = new L.LatLng(results[0].center);
+				latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
+//				latLng = new L.LatLng(results[0].center);
 
 //				geocoder.geocode(address, (resultArray) => {
 //		          	if (resultArray.length > 0) {
