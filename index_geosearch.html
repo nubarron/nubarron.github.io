@@ -56,7 +56,7 @@
 		
 		async function mapAddress(address, pop) {
 				await geocoder.geocode(address, function(results) {
-				latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
+				latLng = new L.LatLng(results[0].center.lat,results[0].center.lng);
 				
 				masenpop = L.marker(latLng).addTo(map);
  			  	masenpop.bindPopup(pop);
