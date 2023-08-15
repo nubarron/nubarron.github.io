@@ -55,13 +55,23 @@
 		let search_address, popupData, latLng;
 		
 		async function mapAddress(address, pop) {
-				await geocoder.geocode(address, function(results) {
-				latLng = new L.LatLng(results[0].center.lat,results[0].center.lng);
+			geocoder.geocode(address, (resultArray) => {
+		          	if (resultArray.length > 0) {
+        		    const result = resultArray[0];
+      	      		const latlng = result.center;
+//            L.marker(latlng, { icon }).addTo(map).bindPopup(result.name);
+//            map.fitBounds(result.bbox);
+
+
+
+/*			await geocoder.geocode(address, function(results) {
+				latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
 				
 				masenpop = L.marker(latLng).addTo(map);
  			  	masenpop.bindPopup(pop);
 				return latLng;
-			});
+*/			
+		}});
 		}
 
 
