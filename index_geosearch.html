@@ -54,7 +54,7 @@
 
 		var search_address, popupData;
 		
-		await function mapAddress(address, pop) {
+		async function mapAddress(address, pop) {
 				geocoder.geocode(address, function(results) {
 				latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
 				
