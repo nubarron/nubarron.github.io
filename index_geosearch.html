@@ -37,10 +37,10 @@
 	<div id="map"></div>
 
 	<script>		
-	var geocoder = new L.Control.Geocoder.nominatim();
+	let geocoder = new L.Control.Geocoder.nominatim();
 			
 		// The following sets the bounds for the state of Massachusetts. These coordinates were generated in OpenStreetMaps.
-		var map = L.map('map').fitBounds([
+		let map = L.map('map').fitBounds([
     			[42.8981, -73.8391],
     			[41.1766, -69.5270]
 		]);
@@ -52,7 +52,7 @@
 
 //		L.Control.geocoder().addTo(map);
 
-		let search_address, popupData;
+		let search_address, popupData, latLng;
 		
 		async function mapAddress(address, pop) {
 				await geocoder.geocode(address, function(results) {
