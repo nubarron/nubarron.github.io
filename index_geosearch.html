@@ -96,7 +96,13 @@
 	    
 			search_address = dataObject.masen_address + ',+' + dataObject.masen_city + ',+' + dataObject.masen_state + ',+' + dataObject.masen_zip;
 	    		alert(search_address);
+
+//				let url = 'https://nominatim.openstreetmap.org/?format=json&addressdetails=1&search?q=' + search_address + '&format=json&limit=1';
+
 				mapAddress(search_address, popupData);
+//				let masenpop = L.marker([masen_lat, masen_long]).addTo(map);
+
+//			    masenpop.bindPopup(masen_name + '<br><br><b>' + masen_desc + '</b><br><br>'+ masen_address + ', ' + masen_city + ', ' + masen_state + ', ' + masen_zip);
 
 //			try {
 //			  alert(latLng);
