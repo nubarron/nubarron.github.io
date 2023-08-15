@@ -59,6 +59,9 @@
 		          	if (resultArray.length > 0) {
         		    const result = resultArray[0];
       	      		const latlng = result.center;
+					masenpop = L.marker(latLng).addTo(map);
+ 			  		masenpop.bindPopup(pop);
+
 //            L.marker(latlng, { icon }).addTo(map).bindPopup(result.name);
 //            map.fitBounds(result.bbox);
 
