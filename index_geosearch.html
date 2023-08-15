@@ -55,14 +55,17 @@
 		let search_address, popupData, latLng;
 		
 		function mapAddress(address, pop) {
-			geocoder.geocode(address, (resultArray) => {
-		          	if (resultArray.length > 0) {
-        		    const result = resultArray[0];
-      	      		const latLng = result.center;
+			geocoder.geocode(address, function(results) {
+				latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
+
+//				geocoder.geocode(address, (resultArray) => {
+//		          	if (resultArray.length > 0) {
+  //      		    const result = resultArray[0];
+    //  	      		const latLng = result.center;
 					alert(latLng);
 					masenpop = L.marker(latLng).addTo(map);
  			  		masenpop.bindPopup(pop);
-
+			});
 //            L.marker(latlng, { icon }).addTo(map).bindPopup(result.name);
 //            map.fitBounds(result.bbox);
 
@@ -75,7 +78,7 @@
  			  	masenpop.bindPopup(pop);
 				return latLng;
 */			
-		}});
+//		}});
 		}
 
 
