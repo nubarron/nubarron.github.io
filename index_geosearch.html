@@ -54,7 +54,7 @@
 
 		let search_address, popupData, latLng;
 		
-		async function mapAddress(address, pop) {
+		function mapAddress(address, pop) {
 			geocoder.geocode(address, (resultArray) => {
 		          	if (resultArray.length > 0) {
         		    const result = resultArray[0];
