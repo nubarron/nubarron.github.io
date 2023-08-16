@@ -79,7 +79,7 @@
 	    
 					search_address = obj.masen_address + ',+' + obj.masen_city + ',+' + obj.masen_state + ',+' + obj.masen_zip;
 
-					geocoder.geocode(search_address, popupData, function(results) {
+					geocoder.geocode(search_address, function(results) {
 						latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
 //				latLng = new L.LatLng(results[0].center);
 
@@ -88,10 +88,10 @@
   //      		    const result = resultArray[0];
     //  	      		const latLng = result.center;
 						alert(latLng);
-						masenpop = L.marker(latLng).addTo(map);
-						masenpop.bindPopup(popupData);
 				});
 
+				masenpop = L.marker(latLng).addTo(map);
+						masenpop.bindPopup(popupData);
 
 
 	});	
