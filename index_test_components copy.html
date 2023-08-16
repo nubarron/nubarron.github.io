@@ -54,29 +54,29 @@
     { prop1 : "val1", prop2 : "val2" },
     { prop1 : "A value", prop2 : "Another value" }
 ]
-		let arrayOfLocations = [
+		let locations = [
 			{
-		    	masen_name: "test leaflet and geocoder",  
-				masen_desc: 'Description', 
-				masen_address: '305A Westhampton Rd.',
-				masen_city: 'Northampton',
-				masen_state: 'MA',
-				masen_zip: '01062'
-			},
-			{	
-				masen_name: "Holyoke Medical Center",  
-				masen_desc: 'Description', 
-				masen_address: '575 Beech St.',
-				masen_city: 'Holyoke',
-				masen_state: 'MA',
-				masen_zip: '01040'
-			}
+					masen_name: "test leaflet and geocoder",  
+					masen_desc: 'Description', 
+					masen_address: '305A Westhampton Rd.',
+					masen_city: 'Northampton',
+					masen_state: 'MA',
+					masen_zip: '01062'
+				},
+				{	
+					masen_name: "Holyoke Medical Center",  
+					masen_desc: 'Description', 
+					masen_address: '575 Beech St.',
+					masen_city: 'Holyoke',
+					masen_state: 'MA',
+					masen_zip: '01040'
+				}
 		]
-				console.log('Retrieved', arrayOfLocations[0].masen_name);
+				console.log('Retrieved', locations[0].masen_name);
 			
-			popupData = arrayOfLocations[0].masen_name + '<br><br><b>' + arrayOfLocations[0].masen_desc + '</b><br><br>'+ arrayOfLocations[0].masen_address + ', ' + arrayOfLocations[0].masen_city + ', ' + arrayOfLocations[0].masen_state + ', ' + arrayOfLocations[0].masen_zip;
+			popupData = locations[0].masen_name + '<br><br><b>' + locations[0].masen_desc + '</b><br><br>'+ locations[0].masen_address + ', ' + locations[0].masen_city + ', ' + locations[0].masen_state + ', ' + locations[0].masen_zip;
 	    
-			search_address = arrayOfLocations[0].masen_address + ',+' + arrayOfLocations[0].masen_city + ',+' + arrayOfLocations[0].masen_state + ',+' + arrayOfLocations[0].masen_zip;
+			search_address = locations[0].masen_address + ',+' + locations[0].masen_city + ',+' + locations[0].masen_state + ',+' + locations[0].masen_zip;
 	    		alert(search_address);
 
 
