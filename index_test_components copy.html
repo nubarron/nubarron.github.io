@@ -50,10 +50,7 @@
 		let geocoder = new L.Control.Geocoder.nominatim();
 
 		let search_address, popupData, latLng;
-		myArray = [
-    { prop1 : "val1", prop2 : "val2" },
-    { prop1 : "A value", prop2 : "Another value" }
-]
+
 		let locations = [
 			{
 					masen_name: "test leaflet and geocoder",  
@@ -73,7 +70,12 @@
 				}
 		]
 				console.log('Retrieved', locations[0].masen_name);
-			
+
+				location.forEach((obj, i) => {
+     console.log("name", obj.masen_name);
+     console.log("address", obj.masen_address);
+ });	
+
 			popupData = locations[0].masen_name + '<br><br><b>' + locations[0].masen_desc + '</b><br><br>'+ locations[0].masen_address + ', ' + locations[0].masen_city + ', ' + locations[0].masen_state + ', ' + locations[0].masen_zip;
 	    
 			search_address = locations[0].masen_address + ',+' + locations[0].masen_city + ',+' + locations[0].masen_state + ',+' + locations[0].masen_zip;
