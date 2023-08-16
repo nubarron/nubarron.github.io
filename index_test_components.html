@@ -31,14 +31,14 @@
 	<script>		
 	let geocoder = new L.Control.Geocoder.nominatim();
 			
-	L.Control.geocoder().addTo(map);
+//	L.Control.geocoder().addTo(map);
 
 	let search_address, popupData, latLng;
 
     search_address = "305A Westhampton Rd, Northampton, MA 01062";
 
     geocoder.geocode(search_address, function(results) {
-		latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
+		latLng = new LatLng(results[0].center.lat, results[0].center.lng);
 //				latLng = new L.LatLng(results[0].center);
 
 //				geocoder.geocode(address, (resultArray) => {
