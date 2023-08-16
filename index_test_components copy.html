@@ -50,21 +50,33 @@
 		let geocoder = new L.Control.Geocoder.nominatim();
 
 		let search_address, popupData, latLng;
-
-		const dataObject = {
+		myArray = [
+    { prop1 : "val1", prop2 : "val2" },
+    { prop1 : "A value", prop2 : "Another value" }
+]
+		let arrayOfLocations = [
+			{
 		    	masen_name: "test leaflet and geocoder",  
 				masen_desc: 'Description', 
 				masen_address: '305A Westhampton Rd.',
 				masen_city: 'Northampton',
 				masen_state: 'MA',
 				masen_zip: '01062'
-				}
+			},
+			{	
+				masen_name: "Holyoke Medical Center",  
+				masen_desc: 'Description', 
+				masen_address: '575 Beech St.',
+				masen_city: 'Holyoke',
+				masen_state: 'MA',
+				masen_zip: '01040'
+			}
 
 				console.log('Retrieved', dataObject.masen_name);
 			
-			popupData = dataObject.masen_name + '<br><br><b>' + dataObject.masen_desc + '</b><br><br>'+ dataObject.masen_address + ', ' + dataObject.masen_city + ', ' + dataObject.masen_state + ', ' + dataObject.masen_zip;
+			popupData = arrayOfLocations[0].masen_name + '<br><br><b>' + arrayOfLocations[0].masen_desc + '</b><br><br>'+ arrayOfLocations[0].masen_address + ', ' + arrayOfLocations[0].masen_city + ', ' + arrayOfLocations[0].masen_state + ', ' + arrayOfLocations[0].masen_zip;
 	    
-			search_address = dataObject.masen_address + ',+' + dataObject.masen_city + ',+' + dataObject.masen_state + ',+' + dataObject.masen_zip;
+			search_address = arrayOfLocations[0].masen_address + ',+' + arrayOfLocations[0].masen_city + ',+' + arrayOfLocations[0].masen_state + ',+' + arrayOfLocations[0].masen_zip;
 	    		alert(search_address);
 
 
