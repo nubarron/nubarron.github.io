@@ -72,18 +72,37 @@
 				console.log('Retrieved', locations[0].masen_name);
 
 				locations.forEach((obj, i) => {
-     console.log("name", obj.masen_name);
-     console.log("address", obj.masen_address);
- });	
+				    console.log("name", obj.masen_name);
+     				console.log("address", obj.masen_address);
 
-			popupData = locations[0].masen_name + '<br><br><b>' + locations[0].masen_desc + '</b><br><br>'+ locations[0].masen_address + ', ' + locations[0].masen_city + ', ' + locations[0].masen_state + ', ' + locations[0].masen_zip;
+					popupData = obj.masen_name + '<br><br><b>' + obj.masen_desc + '</b><br><br>'+ obj.masen_address + ', ' + obj.masen_city + ', ' + obj.masen_state + ', ' + obj.masen_zip;
 	    
-			search_address = locations[0].masen_address + ',+' + locations[0].masen_city + ',+' + locations[0].masen_state + ',+' + locations[0].masen_zip;
-	    		alert(search_address);
+					search_address = obj.masen_address + ',+' + obj.masen_city + ',+' + obj.masen_state + ',+' + obj.masen_zip;
+
+					geocoder.geocode(search_address, function(results) {
+						latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
+//				latLng = new L.LatLng(results[0].center);
+
+//				geocoder.geocode(address, (resultArray) => {
+//		          	if (resultArray.length > 0) {
+  //      		    const result = resultArray[0];
+    //  	      		const latLng = result.center;
+						alert(latLng);
+						masenpop = L.marker(latLng).addTo(map);
+	 			  		masenpop.bindPopup(popupData);
+				});
+
+
+	});	
+
+//			popupData = locations[0].masen_name + '<br><br><b>' + locations[0].masen_desc + '</b><br><br>'+ locations[0].masen_address + ', ' + locations[0].masen_city + ', ' + locations[0].masen_state + ', ' + locations[0].masen_zip;
+	    
+//			search_address = locations[0].masen_address + ',+' + locations[0].masen_city + ',+' + locations[0].masen_state + ',+' + locations[0].masen_zip;
+//	    		alert(search_address);
 
 
 
-		
+/*		
 		geocoder.geocode(search_address, function(results) {
 						latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
 //				latLng = new L.LatLng(results[0].center);
