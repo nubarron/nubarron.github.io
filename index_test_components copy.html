@@ -51,7 +51,23 @@
 
 		let search_address, popupData, latLng;
 
-		search_address = "305A Westhampton Rd, Northampton, MA 01062";
+		const dataObject = {
+		    	masen_name: "test leaflet and geocoder",  
+				masen_desc: 'Description', 
+				masen_address: '305A Westhampton Rd.',
+				masen_city: 'Northampton,
+				masen_state: 'MA',
+				masen_zip: '01062'
+				}
+
+				console.log('Retrieved', dataObject.masen_name);
+			
+			popupData = dataObject.masen_name + '<br><br><b>' + dataObject.masen_desc + '</b><br><br>'+ dataObject.masen_address + ', ' + dataObject.masen_city + ', ' + dataObject.masen_state + ', ' + dataObject.masen_zip;
+	    
+			search_address = dataObject.masen_address + ',+' + dataObject.masen_city + ',+' + dataObject.masen_state + ',+' + dataObject.masen_zip;
+	    		alert(search_address);
+
+
 
 		
 		geocoder.geocode(search_address, function(results) {
@@ -64,7 +80,7 @@
     //  	      		const latLng = result.center;
 						alert(latLng);
 						masenpop = L.marker(latLng).addTo(map);
-	 			  		masenpop.bindPopup(pop);
+	 			  		masenpop.bindPopup(popupData);
 				});
 
 /*		function mapAddress(address, pop) {
