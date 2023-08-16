@@ -71,7 +71,7 @@
 		]
 				console.log('Retrieved', locations[0].masen_name);
 
-				locations.forEach((obj, i) => {
+				async locations.forEach((obj, i) => {
 				    console.log("name", obj.masen_name);
      				console.log("address", obj.masen_address);
 
@@ -79,7 +79,7 @@
 	    
 					search_address = obj.masen_address + ',+' + obj.masen_city + ',+' + obj.masen_state + ',+' + obj.masen_zip;
 
-					geocoder.geocode(search_address, function(results) {
+					await geocoder.geocode(search_address, function(results) {
 						latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
 //				latLng = new L.LatLng(results[0].center);
 
@@ -90,8 +90,8 @@
 						alert(latLng);
 				});
 
-				masenpop = L.marker(latLng).addTo(map);
-						masenpop.bindPopup(popupData);
+					masenpop = L.marker(latLng).addTo(map);
+					masenpop.bindPopup(popupData);
 
 
 	});	
