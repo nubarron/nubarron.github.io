@@ -5,9 +5,6 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
-	<title>MASEN Map Test using Airtable and Leaflet</title>
-        <script src="airtable.browser.js"></script>
-
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
     	<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
@@ -37,7 +34,6 @@
 	<div id="map"></div>
 
 	<script>		
-	let geocoder = new L.Control.Geocoder.nominatim();
 			
 		// The following sets the bounds for the state of Massachusetts. These coordinates were generated in OpenStreetMaps.
 		let map = L.map('map').fitBounds([
@@ -51,9 +47,26 @@
 		}).addTo(map);
 
 		L.Control.geocoder().addTo(map);
+		let geocoder = new L.Control.Geocoder.nominatim();
 
 		let search_address, popupData, latLng;
+
+		search_address = "305A Westhampton Rd, Northampton, MA 01062";
+
 		
+		geocoder.geocode(search_address, function(results) {
+						latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
+//				latLng = new L.LatLng(results[0].center);
+
+//				geocoder.geocode(address, (resultArray) => {
+//		          	if (resultArray.length > 0) {
+  //      		    const result = resultArray[0];
+    //  	      		const latLng = result.center;
+						alert(latLng);
+						masenpop = L.marker(latLng).addTo(map);
+	 			  		masenpop.bindPopup(pop);
+				});
+
 /*		function mapAddress(address, pop) {
 			geocoder.geocode(address, function(results) {
 				latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
@@ -81,7 +94,7 @@
 			
 //		}});
 		}
-*/
+
 
 		var Airtable = require('airtable');
           	var base = new Airtable({apiKey: 'patHXMh9QL5KMwJzG.d5cc1651970c910d9faab7bd5246c025f994540188a71e4c9dad38d6c1192f94'}).base('appBW71DB555EyIBL');
@@ -120,18 +133,6 @@
 //				mapAddress(search_address, popupData);
 //				let masenpop = L.marker([masen_lat, masen_long]).addTo(map);
 
-					geocoder.geocode(search_address, function(results) {
-						latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
-//				latLng = new L.LatLng(results[0].center);
-
-//				geocoder.geocode(address, (resultArray) => {
-//		          	if (resultArray.length > 0) {
-  //      		    const result = resultArray[0];
-    //  	      		const latLng = result.center;
-						alert(latLng);
-						masenpop = L.marker(latLng).addTo(map);
-	 			  		masenpop.bindPopup(pop);
-				});
 
 //			    masenpop.bindPopup(masen_name + '<br><br><b>' + masen_desc + '</b><br><br>'+ masen_address + ', ' + masen_city + ', ' + masen_state + ', ' + masen_zip);
 
@@ -154,7 +155,7 @@
 				alert(LONG);
 //					return latLng;
 			});
-*/
+
 			
 //			alert("uno (2): " + latLng);
 //		    		alert(latLng);
@@ -172,7 +173,7 @@
     if (err) { console.error(err); return; }
 });
 
-
+*/
 
 
 	</script>	
