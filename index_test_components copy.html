@@ -88,9 +88,10 @@
   //      		    const result = resultArray[0];
     //  	      		const latLng = result.center;
 						alert(latLng);
-						masenpop = L.marker(latLng).addTo(map);
-	 			  		masenpop.bindPopup(popupData);
 				});
+
+				masenpop = L.marker(latLng).addTo(map);
+		  		masenpop.bindPopup(popupData);
 
 
 	});	
