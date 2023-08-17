@@ -51,6 +51,14 @@
 
 		let popupData, latLng, masenpop;
 
+		function mapAddress(address, pop) {
+			geocoder.geocode(address, function(results) {
+				latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
+					masenpop = L.marker(latLng).addTo(map);
+					masenpop.bindPopup(popupData);
+			});
+		}
+
 		let locations = [
 			{
 					masen_name: "test leaflet and geocoder",  
@@ -82,18 +90,20 @@
 					alert(search_address);
 					alert(popupData);
 
-					geocoder.geocode(search_address, function(results) {
-						latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
-						masenpop = L.marker(latLng).addTo(map);
-					masenpop.bindPopup(popupData);
+
+					mapAddress(search_address, popupData);
+//					geocoder.geocode(search_address, function(results) {
+//						latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
+//						masenpop = L.marker(latLng).addTo(map);
+//					masenpop.bindPopup(popupData);
 //				latLng = new L.LatLng(results[0].center);
 
 //				geocoder.geocode(address, (resultArray) => {
 //		          	if (resultArray.length > 0) {
   //      		    const result = resultArray[0];
     //  	      		const latLng = result.center;
-						alert(latLng);
-				});
+//						alert(latLng);
+//				});
 
 //					masenpop = L.marker(latLng).addTo(map);
 //					masenpop.bindPopup(popupData);
