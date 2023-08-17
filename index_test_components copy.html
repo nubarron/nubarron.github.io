@@ -52,11 +52,14 @@
 		let popupData, latLng, masenpop;
 
 		function mapAddress(address, pop) {
+			alert(address);
+			alert(pop);
+
 			geocoder.geocode(address, function(results) {
 				latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
 					masenpop = L.marker(latLng).addTo(map);
-					masenpop.bindPopup(popupData);
 			});
+			masenpop.bindPopup(popupData);
 		}
 
 		let locations = [
