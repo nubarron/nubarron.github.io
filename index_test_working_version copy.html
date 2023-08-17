@@ -104,12 +104,12 @@
     	if (err) { console.error(err); return; }
 	});
 
-	if(locations) {
-	alert(locations);
-	alert(locations[0].masen_name);
+//	if(locations) {
+//	alert(locations);
+//	alert(locations[0].masen_name);
 //				console.log('Retrieved', locations[0].masen_name);
 
-	locations.forEach((obj, i) => {
+	await locations.forEach((obj, i) => {
 	    console.log("name", obj.masen_name);
 		console.log("address", obj.masen_address);
 
@@ -122,7 +122,7 @@
 
 		mapAddress(search_address, popupData);
 	});	
-	}
+//	}
 
 	</script>	
 
