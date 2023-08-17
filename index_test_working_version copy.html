@@ -35,24 +35,24 @@
 	<p>This map can be filtered by county and/or type of organization. Please use the drop downs to filter the map.</p>
 	<div id="map"></div>
 
-	<script>		
+<script>		
 			
-		// The following sets the bounds for the state of Massachusetts. These coordinates were generated in OpenStreetMaps.
-		let map = L.map('map').fitBounds([
-    			[42.8981, -73.8391],
-    			[41.1766, -69.5270]
-		]);
+	// The following sets the bounds for the state of Massachusetts. These coordinates were generated in OpenStreetMaps.
+	let map = L.map('map').fitBounds([
+   			[42.8981, -73.8391],
+   			[41.1766, -69.5270]
+	]);
 	
-		L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-			maxZoom: 13,
-			attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-		}).addTo(map);
+	L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		maxZoom: 13,
+		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+	}).addTo(map);
 
-		L.Control.geocoder().addTo(map);
-		let geocoder = new L.Control.Geocoder.nominatim();
+	L.Control.geocoder().addTo(map);
+	let geocoder = new L.Control.Geocoder.nominatim();
 
 		let popupData, latLng, masenpop;
-		let masen_name, masen_desc, masen_address, masen_city, masen_state, masen_zip;
+//		let masen_name, masen_desc, masen_address, masen_city, masen_state, masen_zip;
 		const locations = [];
 
 		function mapAddress(address, pop) {
@@ -104,168 +104,23 @@
     if (err) { console.error(err); return; }
 });
 
-				alert(locations[0].masen_name);
+alert(locations);
+alert(locations[0].masen_name);
 //				console.log('Retrieved', locations[0].masen_name);
 
-				locations.forEach((obj, i) => {
-				    console.log("name", obj.masen_name);
-     				console.log("address", obj.masen_address);
+	locations.forEach((obj, i) => {
+	    console.log("name", obj.masen_name);
+		console.log("address", obj.masen_address);
 
-					popupData = obj.masen_name + '<br><br><b>' + obj.masen_desc + '</b><br><br>'+ obj.masen_address + ', ' + obj.masen_city + ', ' + obj.masen_state + ', ' + obj.masen_zip;
+		popupData = obj.masen_name + '<br><br><b>' + obj.masen_desc + '</b><br><br>'+ obj.masen_address + ', ' + obj.masen_city + ', ' + obj.masen_state + ', ' + obj.masen_zip;
 					
-					search_address = obj.masen_address + ',+' + obj.masen_city + ',+' + obj.masen_state + ',+' + obj.masen_zip;
-					alert(search_address);
-					alert(popupData);
+		search_address = obj.masen_address + ',+' + obj.masen_city + ',+' + obj.masen_state + ',+' + obj.masen_zip;
+		alert(search_address);
+		alert(popupData);
 
 
-					mapAddress(search_address, popupData);
-//					geocoder.geocode(search_address, function(results) {
-//						latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
-//						masenpop = L.marker(latLng).addTo(map);
-//					masenpop.bindPopup(popupData);
-//				latLng = new L.LatLng(results[0].center);
-
-//				geocoder.geocode(address, (resultArray) => {
-//		          	if (resultArray.length > 0) {
-  //      		    const result = resultArray[0];
-    //  	      		const latLng = result.center;
-//						alert(latLng);
-//				});
-
-//					masenpop = L.marker(latLng).addTo(map);
-//					masenpop.bindPopup(popupData);
-
-
+		mapAddress(search_address, popupData);
 	});	
-
-//			popupData = locations[0].masen_name + '<br><br><b>' + locations[0].masen_desc + '</b><br><br>'+ locations[0].masen_address + ', ' + locations[0].masen_city + ', ' + locations[0].masen_state + ', ' + locations[0].masen_zip;
-	    
-//			search_address = locations[0].masen_address + ',+' + locations[0].masen_city + ',+' + locations[0].masen_state + ',+' + locations[0].masen_zip;
-//	    		alert(search_address);
-
-
-
-/*		
-		geocoder.geocode(search_address, function(results) {
-						latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
-//				latLng = new L.LatLng(results[0].center);
-
-//				geocoder.geocode(address, (resultArray) => {
-//		          	if (resultArray.length > 0) {
-  //      		    const result = resultArray[0];
-    //  	      		const latLng = result.center;
-						alert(latLng);
-						masenpop = L.marker(latLng).addTo(map);
-	 			  		masenpop.bindPopup(popupData);
-				});
-
-/*		function mapAddress(address, pop) {
-			geocoder.geocode(address, function(results) {
-				latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
-//				latLng = new L.LatLng(results[0].center);
-
-//				geocoder.geocode(address, (resultArray) => {
-//		          	if (resultArray.length > 0) {
-  //      		    const result = resultArray[0];
-    //  	      		const latLng = result.center;
-					alert(latLng);
-					masenpop = L.marker(latLng).addTo(map);
- 			  		masenpop.bindPopup(pop);
-			});
-//            L.marker(latlng, { icon }).addTo(map).bindPopup(result.name);
-//            map.fitBounds(result.bbox);
-
-
-
-/*			await geocoder.geocode(address, function(results) {
-				latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
-				
-				masenpop = L.marker(latLng).addTo(map);
- 			  	masenpop.bindPopup(pop);
-				return latLng;
-			
-//		}});
-		}
-
-
-		var Airtable = require('airtable');
-          	var base = new Airtable({apiKey: 'patHXMh9QL5KMwJzG.d5cc1651970c910d9faab7bd5246c025f994540188a71e4c9dad38d6c1192f94'}).base('appBW71DB555EyIBL');
-
-
-			  base('Map_source').select({
-    			// Selecting the first 3 records in Grid view:
-    			maxRecords: 3,
-    			view: "Grid view"
-		}).eachPage(function page(records, fetchNextPage) {
-     
-	    // This function (`page`) will get called for each page of records.
-		var masen_name, masen_desc, masen_address, masen_city, masen_state, masen_zip, latLng, masen_pop, results;
-	
-//	    records.forEach(function(record) {
-		for (const record of records) {
-//			await function(record);
-
-			const dataObject = {
-		    	masen_name: record.get('Name'),  
-				masen_desc: record.get('Description'), // test
-				masen_address: record.get('Address').replace(/\s/gi,"+"),
-				masen_city: record.get('City'),
-				masen_state: record.get('State'),
-				masen_zip: record.get('Zip Code')
-				}
-							  console.log('Retrieved', dataObject.masen_name);
-			
-			popupData = dataObject.masen_name + '<br><br><b>' + dataObject.masen_desc + '</b><br><br>'+ dataObject.masen_address + ', ' + dataObject.masen_city + ', ' + dataObject.masen_state + ', ' + dataObject.masen_zip;
-	    
-			search_address = dataObject.masen_address + ',+' + dataObject.masen_city + ',+' + dataObject.masen_state + ',+' + dataObject.masen_zip;
-	    		alert(search_address);
-
-//				let url = 'https://nominatim.openstreetmap.org/?format=json&addressdetails=1&search?q=' + search_address + '&format=json&limit=1';
-
-//				mapAddress(search_address, popupData);
-//				let masenpop = L.marker([masen_lat, masen_long]).addTo(map);
-
-
-//			    masenpop.bindPopup(masen_name + '<br><br><b>' + masen_desc + '</b><br><br>'+ masen_address + ', ' + masen_city + ', ' + masen_state + ', ' + masen_zip);
-
-//			try {
-//			  alert(latLng);
-//              console.log('latLng is defined')
-//            } catch(e) {
-//			  console.log('latLng is not defined');
-//			}
-
-/*			geocoder.geocode(search_address, function(results) {    
-				latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
-				LAT = results[0].center.lat;
-				var LONG = results[0].center.lng;
-//				var masenpop = L.marker(latLng).addTo(map);
-//				masenpop.bindPopup(masen_name + '<br><br><b>' + masen_desc + '</b><br><br>'+ masen_address + ', ' + masen_city + ', ' + masen_state + ', ' + masen_zip);
-
-		    		alert("uno (2): " + latLng);
-		    		alert(LAT);
-				alert(LONG);
-//					return latLng;
-			});
-
-			
-//			alert("uno (2): " + latLng);
-//		    		alert(latLng);
-//					alert(LAT);
-//					alert(LONG);
-//				var masenpop = L.marker(LAT + "," + LONG).addTo(map);
-		    
-		};
-    // To fetch the next page of records, call `fetchNextPage`.
-    // If there are more records, `page` will get called again.
-    // If there are no more records, `done` will get called.
-    fetchNextPage();
-
-}, function done(err) {
-    if (err) { console.error(err); return; }
-});
-
-*/
 
 
 	</script>	
