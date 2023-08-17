@@ -52,6 +52,7 @@
 		let geocoder = new L.Control.Geocoder.nominatim();
 
 		let popupData, latLng, masenpop;
+		let masen_name, masen_desc, masen_address, masen_city, masen_state, masen_zip, latLng, masen_pop, results;
 		const locations = [];
 
 		function mapAddress(address, pop) {
@@ -75,7 +76,6 @@
 		}).eachPage(function page(records, fetchNextPage) {
      
 	    // This function (`page`) will get called for each page of records.
-		let masen_name, masen_desc, masen_address, masen_city, masen_state, masen_zip, latLng, masen_pop, results;
 	
 	    records.forEach(function(record) {
 //		for (const record of records) {
