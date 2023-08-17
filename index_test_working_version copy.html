@@ -53,7 +53,7 @@
 
 		let popupData, latLng, masenpop;
 		let masen_name, masen_desc, masen_address, masen_city, masen_state, masen_zip;
-		const locations = [];
+		const locations = {};
 
 		function mapAddress(address, pop) {
 			alert(address);
@@ -81,7 +81,7 @@
 		for (const record of records) {
 //			await function(record);
 
-		let locations = [
+		let locations =
 			{
 		    	masen_name: record.get('Name'),  
 				masen_desc: record.get('Description'), // test
@@ -90,7 +90,6 @@
 				masen_state: record.get('State'),
 				masen_zip: record.get('Zip Code')
 				}
-		]
 
 	};
 
