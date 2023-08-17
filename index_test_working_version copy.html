@@ -89,9 +89,10 @@
 				masen_city: record.get('City'),
 				masen_state: record.get('State'),
 				masen_zip: record.get('Zip Code')
-				}
-				alert(location.masen_name);
-				locations.push(location);
+			}
+			
+		alert(location.masen_name);
+		locations.push(location);
 	};
 
 
@@ -108,6 +109,17 @@
 //	alert(locations);
 //	alert(locations[0].masen_name);
 //				console.log('Retrieved', locations[0].masen_name);
+
+(async function () {
+  for await (const loc of locations) {
+    console.log(loc);
+    // Expected output: 1
+
+    break; // Closes iterator, triggers return
+  }
+})();
+
+
 
 	locations.forEach((obj, i) => {
 	    console.log("name", obj.masen_name);
