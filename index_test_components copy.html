@@ -58,8 +58,8 @@
 					masen_address: '305A Westhampton Rd.',
 					masen_city: 'Northampton',
 					masen_state: 'MA',
-					masen_zip: '01062',
-					search_address: masen_address + ',+' + masen_city + ',+' + masen_state + ',+' + masen_zip
+					masen_zip: '01062'
+//					search_address = masen_address + ',+' + masen_city + ',+' + masen_state + ',+' + masen_zip
 				},
 				{	
 					masen_name: "Holyoke Medical Center",  
@@ -77,8 +77,8 @@
      				console.log("address", obj.masen_address);
 
 					popupData = obj.masen_name + '<br><br><b>' + obj.masen_desc + '</b><br><br>'+ obj.masen_address + ', ' + obj.masen_city + ', ' + obj.masen_state + ', ' + obj.masen_zip;
-	    
-//					search_address = obj.masen_address + ',+' + obj.masen_city + ',+' + obj.masen_state + ',+' + obj.masen_zip;
+					
+					obj.search_address = obj.masen_address + ',+' + obj.masen_city + ',+' + obj.masen_state + ',+' + obj.masen_zip;
 
 					geocoder.geocode(search_address, function(results) {
 						latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
