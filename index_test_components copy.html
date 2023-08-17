@@ -79,7 +79,8 @@
 					popupData = obj.masen_name + '<br><br><b>' + obj.masen_desc + '</b><br><br>'+ obj.masen_address + ', ' + obj.masen_city + ', ' + obj.masen_state + ', ' + obj.masen_zip;
 					
 					obj.search_address = obj.masen_address + ',+' + obj.masen_city + ',+' + obj.masen_state + ',+' + obj.masen_zip;
-
+					obj.search_address.ToString();
+					
 					geocoder.geocode(search_address, function(results) {
 						latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
 						masenpop = L.marker(latLng).addTo(map);
