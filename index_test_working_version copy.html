@@ -115,7 +115,7 @@
 //	alert(locations[0].masen_name);
 //				console.log('Retrieved', locations[0].masen_name);
 
-loca = getAirtableData(mapAddress);
+loca = getAirtableData(mapAddress(search_address, popupData));
 alert(loca);
 
   for (const loc of loca) {
