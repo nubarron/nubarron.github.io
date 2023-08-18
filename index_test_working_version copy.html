@@ -114,10 +114,10 @@
 //	alert(locations[0].masen_name);
 //				console.log('Retrieved', locations[0].masen_name);
 
-getAirtableData();
-alert(locations);
+loca = getAirtableData();
+alert(loca);
 
-  for (const loc of locations) {
+  for (const loc of loca) {
     console.log(loc);
     // Expected output: 1
 
@@ -126,7 +126,7 @@ alert(locations);
 
 
 
-	locations.forEach((obj, i) => {
+	loca.forEach((obj, i) => {
 	    console.log("name", obj.masen_name);
 		console.log("address", obj.masen_address);
 
