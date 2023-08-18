@@ -116,14 +116,12 @@
 
 getAirtableData();
 
-(async function () {
   for await (const loc of locations) {
     console.log(loc);
     // Expected output: 1
 
     break; // Closes iterator, triggers return
   }
-})();
 
 
 
