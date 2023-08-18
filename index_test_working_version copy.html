@@ -48,13 +48,14 @@
 		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 	}).addTo(map);
 
-		let popupData, latLng, masenpop;
+	L.Control.geocoder().addTo(map);
+	let geocoder = new L.Control.Geocoder.nominatim();
+
+	let popupData, latLng, masenpop;
 //		let masen_name, masen_desc, masen_address, masen_city, masen_state, masen_zip;
-		const locations = [];
+	const locations = [];
 
 		function mapAddress(address, pop) {
-			L.Control.geocoder().addTo(map);
-			let geocoder = new L.Control.Geocoder.nominatim();
 			alert(address);
 			alert(pop);
 
@@ -65,7 +66,7 @@
 			});
 		}
 
-		function getAirtableData (callback) {
+		function getAirtableData () {
 			var Airtable = require('airtable');
     		var base = new Airtable({apiKey: 'patHXMh9QL5KMwJzG.d5cc1651970c910d9faab7bd5246c025f994540188a71e4c9dad38d6c1192f94'}).base('appBW71DB555EyIBL');
 
@@ -73,12 +74,12 @@
     	// Selecting the first 3 records in Grid view:
     		maxRecords: 3,
     		view: "Grid view"
-		}).eachPage(async function page(records, fetchNextPage) {
+		}).eachPage(function page(records, fetchNextPage) {
      
 	    // This function (`page`) will get called for each page of records.
 	
 		//	    records.forEach(function(record) {
-			for await (const record of records) {
+			for (const record of records) {
 		//			await function(record);
 
 			let location =	{
@@ -94,7 +95,7 @@
 		popupData = location.masen_name + '<br><br><b>' + location.masen_desc + '</b><br><br>'+ location.masen_address + ', ' + location.masen_city + ', ' + location.masen_state + ', ' + location.masen_zip;
 
 		alert(location.masen_name);
-		callback(search_address,popupData);
+//		callback(search_address,popupData);
 		locations.push(location);
 	};
 
@@ -117,10 +118,18 @@
 //	alert(locations[0].masen_name);
 //				console.log('Retrieved', locations[0].masen_name);
 
-loca = getAirtableData(mapAddress);
+
+let myPromise = new Promise(function(myResolve, myReject) {
+	loca = getAirtableData();
+});
+
+myPromise.then(function(value) {
+  loopThruData(loca)
+});
+
 alert(loca);
 
-/*
+function loopThruData () {
   for (const loc of loca) {
     console.log(loc);
     // Expected output: 1
@@ -143,8 +152,8 @@ alert(loca);
 
 		mapAddress(search_address, popupData);
 	});	
-//	}
-*/
+	}
+
 	</script>	
 
 </body>
