@@ -90,8 +90,12 @@
 				masen_state: record.get('State'),
 				masen_zip: record.get('Zip Code')
 			}
-			
+
+		search_address = location.masen_address + ',+' + location.masen_city + ',+' + location.masen_state + ',+' + location.masen_zip;
+		popupData = location.masen_name + '<br><br><b>' + location.masen_desc + '</b><br><br>'+ location.masen_address + ', ' + location.masen_city + ', ' + location.masen_state + ', ' + location.masen_zip;
+
 		alert(location.masen_name);
+		callback();
 		locations.push(location);
 	};
 
@@ -105,7 +109,6 @@
     	if (err) { console.error(err); return; }
 	});
 	alert(locations);
-	callback();
 	return locations;
 }
 
