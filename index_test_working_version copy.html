@@ -104,7 +104,7 @@
 	}, function done(err) {
     	if (err) { console.error(err); return; }
 	});
-
+	alert(locations);
 	return locations;
 }
 
@@ -115,6 +115,7 @@
 //				console.log('Retrieved', locations[0].masen_name);
 
 getAirtableData();
+alert(locations);
 
   for (const loc of locations) {
     console.log(loc);
