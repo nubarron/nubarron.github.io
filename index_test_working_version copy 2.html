@@ -121,7 +121,12 @@
 	//		callback(search_address,popupData);
 //			geocoder.geocode(search_address, function(results) {
 //				latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);})
-			mapAddress(search_address,popupData);
+			
+
+			setTimeout(() => { mapAddress(search_address,popupData);
+							  console.log("Delayed for 1 second.");
+				}, 1000);
+
 			locations.push(location);
 			alert("9 " + locations);
 	};
