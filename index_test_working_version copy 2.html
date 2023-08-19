@@ -56,8 +56,8 @@
 	const locations = [];
 
 	function mapAddress(address, pop) {
-		alert("1" + address);
-		alert("2" + pop);
+		alert("1 " + address);
+		alert("2 " + pop);
 
 		geocoder.geocode(address, function(results) {
 			latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
@@ -68,7 +68,7 @@
 
 	function loopThruData (loca) {
   		for (const loc of loca) {
-    	console.log("3" + loc);
+    	console.log("3 " + loc);
     	// Expected output: 1
 
 	    break; // Closes iterator, triggers return
@@ -81,15 +81,15 @@
 		popupData = obj.masen_name + '<br><br><b>' + obj.masen_desc + '</b><br><br>'+ obj.masen_address + ', ' + obj.masen_city + ', ' + obj.masen_state + ', ' + obj.masen_zip;
 					
 		search_address = obj.masen_address + ',+' + obj.masen_city + ',+' + obj.masen_state + ',+' + obj.masen_zip;
-		alert("4" + search_address);
-		alert("5" + popupData);
+		alert("4 " + search_address);
+		alert("5 " + popupData);
 
 
 		mapAddress(search_address, popupData);
 	});	
 	}
 
-		function getAirtableData () {
+		async function getAirtableData () {
 			var Airtable = require('airtable');
     		var base = new Airtable({apiKey: 'patHXMh9QL5KMwJzG.d5cc1651970c910d9faab7bd5246c025f994540188a71e4c9dad38d6c1192f94'}).base('appBW71DB555EyIBL');
 
@@ -102,7 +102,7 @@
 			// This function (`page`) will get called for each page of records.
 		
 			//	    records.forEach(function(record) {
-				for (const record of records) {
+				for await (const record of records) {
 			//			await function(record);
 
 				let location =	{
@@ -117,7 +117,7 @@
 			search_address = location.masen_address + ',+' + location.masen_city + ',+' + location.masen_state + ',+' + location.masen_zip;
 			popupData = location.masen_name + '<br><br><b>' + location.masen_desc + '</b><br><br>'+ location.masen_address + ', ' + location.masen_city + ', ' + location.masen_state + ', ' + location.masen_zip;
 
-			alert("6" + location.masen_name);
+			alert("6 " + location.masen_name);
 	//		callback(search_address,popupData);
 			locations.push(location);
 	};
@@ -131,7 +131,7 @@
 	}, function done(err) {
     	if (err) { console.error(err); return; }
 	});
-	alert("7" + locations);
+	alert("7 " + locations);
 	return locations;
 }
 
@@ -147,7 +147,7 @@ let myPromise = new Promise(function(myResolve, myReject) {
 });
 
 myPromise.then(function(value) {
-	alert("8" + loca);
+	alert("8 " + loca);
 	loopThruData(loca);
 });
 
