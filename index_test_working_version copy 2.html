@@ -145,13 +145,13 @@
 
 let myPromise = new Promise(function(myResolve, myReject) {
 
-	setTimeout(() => {
-    alert("Success!"); // Yay! Everything went well!
-  }, 250);
 	getAirtableData();
 });
 
 myPromise.then(function(value) {
+	setTimeout(() => {
+    alert("10!"); // Yay! Everything went well!
+  }, 250);
 	alert("8 " + value);
 	loopThruData(value);
 }.then( alert("no data returned"))
