@@ -143,21 +143,22 @@
 //				console.log('Retrieved', locations[0].masen_name);
 
 
-let myPromise = new Promise(function(myResolve, myReject) {
-
+let myPromise = new Promise((resolve, reject) => {
 	getAirtableData();
 });
 
-myPromise.then(function(value) {
+myPromise.then(loopThruData(locations)).then( alert("no data returned"))
+/*
+{
 	setTimeout(() => {
     alert("10!"); // Yay! Everything went well!
   }, 1000);
 	alert("8 " + locations);
-	loopThruData(locations);
+	;
 }.then( alert("no data returned"))
 
 );
-
+*/
 
 
 
