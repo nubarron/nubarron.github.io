@@ -151,9 +151,9 @@ let myPromise = new Promise(function(myResolve, myReject) {
 myPromise.then(function(value) {
 	setTimeout(() => {
     alert("10!"); // Yay! Everything went well!
-  }, 250);
-	alert("8 " + value);
-	loopThruData(value);
+  }, 1000);
+	alert("8 " + locations);
+	loopThruData(locations);
 }.then( alert("no data returned"))
 
 );
