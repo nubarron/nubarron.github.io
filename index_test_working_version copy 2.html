@@ -97,7 +97,7 @@
 			// Selecting the first 3 records in Grid view:
 				maxRecords: 3,
 				view: "Grid view"
-			}).eachPage(function page(records, fetchNextPage) {
+			}).eachPage(await function page(records, fetchNextPage) {
 		
 			// This function (`page`) will get called for each page of records.
 		
@@ -120,6 +120,7 @@
 			alert("6 " + location.masen_name);
 	//		callback(search_address,popupData);
 			locations.push(location);
+			alert("9 " + locations);
 	};
 
 
