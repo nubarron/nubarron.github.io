@@ -162,7 +162,9 @@ myPromise.resolve()
 );
 */
 
-(async () => console.log(await getAirtableData()))().then(loopThruData(locations));
+(async () => console.log(await getAirtableData()))()
+.then(alert("11"))
+.then(loopThruData(locations))
 
 	</script>	
 
