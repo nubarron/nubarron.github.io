@@ -56,8 +56,8 @@
 	const locations = [];
 
 	function mapAddress(address, pop) {
-		alert(address);
-		alert(pop);
+		alert("1" + address);
+		alert("2" + pop);
 
 		geocoder.geocode(address, function(results) {
 			latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
@@ -68,7 +68,7 @@
 
 	function loopThruData (loca) {
   		for (const loc of loca) {
-    	console.log(loc);
+    	console.log("3" + loc);
     	// Expected output: 1
 
 	    break; // Closes iterator, triggers return
@@ -81,8 +81,8 @@
 		popupData = obj.masen_name + '<br><br><b>' + obj.masen_desc + '</b><br><br>'+ obj.masen_address + ', ' + obj.masen_city + ', ' + obj.masen_state + ', ' + obj.masen_zip;
 					
 		search_address = obj.masen_address + ',+' + obj.masen_city + ',+' + obj.masen_state + ',+' + obj.masen_zip;
-		alert(search_address);
-		alert(popupData);
+		alert("4" + search_address);
+		alert("5" + popupData);
 
 
 		mapAddress(search_address, popupData);
@@ -117,7 +117,7 @@
 			search_address = location.masen_address + ',+' + location.masen_city + ',+' + location.masen_state + ',+' + location.masen_zip;
 			popupData = location.masen_name + '<br><br><b>' + location.masen_desc + '</b><br><br>'+ location.masen_address + ', ' + location.masen_city + ', ' + location.masen_state + ', ' + location.masen_zip;
 
-			alert(location.masen_name);
+			alert("6" + location.masen_name);
 	//		callback(search_address,popupData);
 			locations.push(location);
 	};
@@ -131,7 +131,7 @@
 	}, function done(err) {
     	if (err) { console.error(err); return; }
 	});
-	alert(locations);
+	alert("7" + locations);
 	return locations;
 }
 
@@ -147,7 +147,7 @@ let myPromise = new Promise(function(myResolve, myReject) {
 });
 
 myPromise.then(function(value) {
-	alert(loca);
+	alert("8" + loca);
 	loopThruData(loca);
 });
 
