@@ -111,7 +111,8 @@
 					masen_address: record.get('Address').replace(/\s/gi,"+"),
 					masen_city: record.get('City'),
 					masen_state: record.get('State'),
-					masen_zip: record.get('Zip Code')
+					masen_zip: record.get('Zip Code'),
+					masen_latlng: "42.35444,20.12"
 				}
 
 			search_address = location.masen_address + ',+' + location.masen_city + ',+' + location.masen_state + ',+' + location.masen_zip;
@@ -119,6 +120,7 @@
 
 			alert("6 " + location.masen_name);
 	//		callback(search_address,popupData);
+				mapAddress(location.masen_latlng, popupData);
 //			geocoder.geocode(search_address, function(results) {
 //				latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);})
 			
