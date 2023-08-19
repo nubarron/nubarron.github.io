@@ -142,7 +142,7 @@
 //	alert(locations[0].masen_name);
 //				console.log('Retrieved', locations[0].masen_name);
 
-
+/*
 let myPromise = new Promise((resolve, reject) => {
 	getAirtableData();
 });
@@ -162,7 +162,8 @@ myPromise.resolve()
 );
 */
 
-
+(async () => console.log(await getAirtableData()))()
+loopThruData(locations);
 
 	</script>	
 
