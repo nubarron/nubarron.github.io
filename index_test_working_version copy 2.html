@@ -147,7 +147,9 @@ let myPromise = new Promise((resolve, reject) => {
 	getAirtableData();
 });
 
-myPromise.then(loopThruData(locations)).then( alert("no data returned"))
+myPromise.resolve()
+.then(loopThruData(locations))
+.then( alert("no data returned"))
 /*
 {
 	setTimeout(() => {
