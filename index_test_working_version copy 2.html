@@ -55,6 +55,11 @@
 //		let masen_name, masen_desc, masen_address, masen_city, masen_state, masen_zip;
 	const locations = [];
 
+	function getLatLong (address) { 
+		geocoder.geocode(address, function(results) {
+		latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
+	})};
+
 	function mapAddress(address, pop) {
 		alert("1 " + address);
 		alert("2 " + pop);
@@ -119,8 +124,10 @@
 
 			alert("6 " + location.masen_name);
 	//		callback(search_address,popupData);
-			geocoder.geocode(search_address, function(results) {
-				latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);})
+			latLng = getLatLong(search_address);
+
+//	geocoder.geocode(search_address, function(results) {
+//				latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);})
 
 			location['masen_latlng'] = latLng;
 
