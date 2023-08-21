@@ -107,7 +107,7 @@
 			// This function (`page`) will get called for each page of records.
 		
 			//	    records.forEach(function(record) {
-				for (const record of records) {
+				for await (const record of records) {
 			//			await function(record);
 
 				let location =	{
@@ -129,9 +129,9 @@
 //	geocoder.geocode(search_address, function(results) {
 //				latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);})
 
-			location['masen_latlng'] = latLng;
+			location["masen_latlng"] = latLng;
 
-			if(location.masen_name == "Equity Trust") { mapAddress(location.masen_latlng, popupData);}
+			if(location.masen_name == "Diamond") { mapAddress(location.masen_latlng, popupData);}
 
 
 			locations.push(location);
