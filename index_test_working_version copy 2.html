@@ -124,7 +124,7 @@
 
 			alert("6 " + location.masen_name);
 	//		callback(search_address,popupData);
-			latLng = getLatLong(search_address);
+			latLng = getLatLong.call(this, search_address);
 
 //	geocoder.geocode(search_address, function(results) {
 //				latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);})
