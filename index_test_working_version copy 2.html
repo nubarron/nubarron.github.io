@@ -120,7 +120,7 @@
 
 			alert("6 " + location.masen_name);
 	//		callback(search_address,popupData);
-				mapAddress(location.masen_latlng, popupData);
+				if(masen_name == "Equity Trust") { mapAddress(location.masen_latlng, popupData);}
 //			geocoder.geocode(search_address, function(results) {
 //				latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);})
 			
