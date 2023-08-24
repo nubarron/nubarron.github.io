@@ -62,6 +62,44 @@
 			});
 		}
 
+		async function getAirtableData () {
+			var Airtable = require('airtable');
+	    		var base = new Airtable({apiKey: 'patHXMh9QL5KMwJzG.d5cc1651970c910d9faab7bd5246c025f994540188a71e4c9dad38d6c1192f94'}).base('appBW71DB555EyIBL');
+
+			await base('Map_source').select({
+			// Selecting the first 3 records in Grid view:
+				maxRecords: 3,
+				view: "Grid view"
+			}).eachPage(await function page(records, fetchNextPage) {
+		
+			// This function (`page`) will get called for each page of records.
+		
+			//	    records.forEach(function(record) {
+				for (const record of records) {
+			//			await function(record);
+
+				let location =	{
+					masen_name: record.get('Name'),  
+					masen_desc: record.get('Description'), // test
+					masen_address: record.get('Address').replace(/\s/gi,"+"),
+					masen_city: record.get('City'),
+					masen_state: record.get('State'),
+					masen_zip: record.get('Zip Code')
+				}
+
+
+    // To fetch the next page of records, call `fetchNextPage`.
+    // If there are more records, `page` will get called again.
+    // If there are no more records, `done` will get called.
+    fetchNextPage();
+
+	}, function done(err) {
+    	if (err) { console.error(err); return; }
+	});
+	alert("7 " + locations);
+	return locations;
+}
+/*
 		let locations = [
 			{
 					masen_name: "test leaflet and geocoder",  
@@ -82,7 +120,7 @@
 				}
 		]
 				console.log('Retrieved', locations[0].masen_name);
-
+*/
 				locations.forEach((obj, i) => {
 				    console.log("name", obj.masen_name);
      				console.log("address", obj.masen_address);
