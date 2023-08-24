@@ -86,7 +86,7 @@
 					masen_state: record.get('State'),
 					masen_zip: record.get('Zip Code')
 				}
-
+			}
 
     // To fetch the next page of records, call `fetchNextPage`.
     // If there are more records, `page` will get called again.
@@ -96,6 +96,7 @@
 	}, function done(err) {
     	if (err) { console.error(err); return; }
 	});
+
 	alert("7 " + locations);
 	return locations;
 //}
