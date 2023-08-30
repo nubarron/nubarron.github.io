@@ -92,8 +92,10 @@
 		alert("4 " + search_address);
 		alert("5 " + popupData);
 
-		getLatLong(search_address);
+		geocoder.geocode(search_address, function(results) {
+		latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
 		alert("12 " + latLng);
+		
 
 		mapAddress(search_address, popupData);
 	});	
