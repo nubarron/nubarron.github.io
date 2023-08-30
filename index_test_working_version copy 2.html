@@ -65,8 +65,9 @@
 		alert("1 " + address);
 		alert("2 " + pop);
 
-//		geocoder.geocode(address, function(results) {
-//			latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
+		geocoder.geocode(address, function(results) {
+			latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);});
+
 			masenpop = L.marker(address).addTo(map);
 			masenpop.bindPopup(pop);
 //		});
@@ -92,10 +93,10 @@
 		alert("4 " + search_address);
 		alert("5 " + popupData);
 
-		geocoder.geocode(search_address, function(results) {
-			latLng = new L.LatLng(results[0].center.lat, results[0].center.lng); });
+//		geocoder.geocode(search_address, function(results) {
+//			latLng = new L.LatLng(results[0].center.lat, results[0].center.lng); });
 
-		alert("12 " + latLng);
+//		alert("12 " + latLng);
 
 
 		mapAddress(search_address, popupData);
