@@ -64,8 +64,8 @@
 		alert("1 " + address);
 		alert("2 " + pop);
 
-//		geocoder.geocode(address, function(results) {
-//			latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
+		geocoder.geocode(address, function(results) {
+			latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
 			masenpop = L.marker(address).addTo(map);
 			masenpop.bindPopup(pop);
 //		});
