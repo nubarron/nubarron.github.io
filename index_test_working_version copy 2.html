@@ -122,10 +122,12 @@
 			search_address = location.masen_address + ',+' + location.masen_city + ',+' + location.masen_state + ',+' + location.masen_zip;
 			popupData = location.masen_name + '<br><br><b>' + location.masen_desc + '</b><br><br>'+ location.masen_address + ', ' + location.masen_city + ', ' + location.masen_state + ', ' + location.masen_zip;
 
-			alert("6 " + location.masen_name);
+			alert("6 " + search_address);
+			alert("10 " + popupData);
 	//		callback(search_address,popupData);
 			latLng = getLatLong.call(this, search_address);
-
+				alert("11 " + latLng);
+				
 //	geocoder.geocode(search_address, function(results) {
 //				latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);})
 
