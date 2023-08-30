@@ -72,6 +72,8 @@
 	}
 
 	function loopThruData (loca) {
+		alert("looping");
+		
   		for (const loc of loca) {
     	console.log("3 " + loc);
     	// Expected output: 1
@@ -149,11 +151,13 @@
 	}, function done(err) {
     	if (err) { console.error(err); return; }
 	});
-	alert("7 " + locations);
-	return locations;
+//	alert("7 " + locations);
+//	return locations;
 }
 
 getAirtableData();
+
+
 loopThruData(locations);
 /*
 setTimeout(() => { loopThruData(locations);
