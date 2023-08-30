@@ -58,6 +58,7 @@
 	function getLatLong (address) { 
 		geocoder.geocode(address, function(results) {
 		latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
+		return latLng;
 	})};
 
 	function mapAddress(address, pop) {
@@ -93,7 +94,7 @@
 
 		getLatLong(search_address);
 		alert("12 " + latLng);
-		
+
 		mapAddress(search_address, popupData);
 	});	
 	}
