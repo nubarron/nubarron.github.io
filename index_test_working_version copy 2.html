@@ -55,11 +55,11 @@
 //		let masen_name, masen_desc, masen_address, masen_city, masen_state, masen_zip;
 	const locations = [];
 
-	function mapAddress(address, pop) {
+	async function mapAddress(address, pop) {
 		alert("1 " + address);
 		alert("2 " + pop);
 
-		geocoder.geocode(address, function(results) {
+		await geocoder.geocode(address, function(results) {
 			latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
 
 			masenpop = L.marker(latLng).addTo(map);
