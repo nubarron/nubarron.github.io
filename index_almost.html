@@ -78,8 +78,8 @@
 				console.log("address", obj.masen_address);
 
 				popupData = obj.masen_name + '<br><br><b>' + obj.masen_desc + '</b><br><br>'+ obj.masen_address + ', ' + obj.masen_city + ', ' + obj.masen_state + ', ' + obj.masen_zip;
-						
 				search_address = obj.masen_address + ',+' + obj.masen_city + ',+' + obj.masen_state + ',+' + obj.masen_zip;
+				
 				alert("4 " + search_address);
 				alert("5 " + popupData);
 
@@ -118,6 +118,15 @@
 
 			alert("6 " + search_address);
 			alert("10 " + popupData);
+
+//			var index = location.findIndex(x => x.masen_name=="bob"); 
+// here you can check specific property for an object whether it exist in your array or not
+
+//if (location.indexOf(masen_item) === -1) array.push(item);
+
+//index === -1 ? arrayObj.push({your_object}) : console.log("object already exists")
+ 
+
 
 			locations.push(location);
 			alert("9 " + locations);
