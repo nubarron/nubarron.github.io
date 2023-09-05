@@ -55,14 +55,6 @@
 //		let masen_name, masen_desc, masen_address, masen_city, masen_state, masen_zip;
 	const locations = [];
 
-	/*
-	function getLatLong (address) { 
-		geocoder.geocode(address, function(results) {
-		latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
-		return latLng;
-	})};
-*/
-
 	function mapAddress(address, pop) {
 		alert("1 " + address);
 		alert("2 " + pop);
@@ -80,34 +72,20 @@
 
   		for (const loc of loca) {
     	console.log("3 " + loc);
-    	// Expected output: 1
 
-//	    break; // Closes iterator, triggers return
-//  		}
+			loca.forEach((obj, i) => {
+				console.log("name", obj.masen_name);
+				console.log("address", obj.masen_address);
 
-	loca.forEach((obj, i) => {
-	    console.log("name", obj.masen_name);
-		console.log("address", obj.masen_address);
+				popupData = obj.masen_name + '<br><br><b>' + obj.masen_desc + '</b><br><br>'+ obj.masen_address + ', ' + obj.masen_city + ', ' + obj.masen_state + ', ' + obj.masen_zip;
+						
+				search_address = obj.masen_address + ',+' + obj.masen_city + ',+' + obj.masen_state + ',+' + obj.masen_zip;
+				alert("4 " + search_address);
+				alert("5 " + popupData);
 
-		popupData = obj.masen_name + '<br><br><b>' + obj.masen_desc + '</b><br><br>'+ obj.masen_address + ', ' + obj.masen_city + ', ' + obj.masen_state + ', ' + obj.masen_zip;
-					
-		search_address = obj.masen_address + ',+' + obj.masen_city + ',+' + obj.masen_state + ',+' + obj.masen_zip;
-		alert("4 " + search_address);
-		alert("5 " + popupData);
-
-//		geocoder.geocode(search_address, function(results) {
-//			latLng = new L.LatLng(results[0].center.lat, results[0].center.lng); });
-
-//		alert("12 " + latLng);
-
-mapAddress(search_address, popupData);
-//setTimeout(() => { mapAddress(search_address, popupData);
-//							  console.log("Delayed for 5 seconds.");
-//				}, 5000);
-
-		
-	});	
-	}
+				mapAddress(search_address, popupData);
+			});	
+		}
 	}
 
 		async function getAirtableData () {
@@ -140,17 +118,6 @@ mapAddress(search_address, popupData);
 
 			alert("6 " + search_address);
 			alert("10 " + popupData);
-	//		callback(search_address,popupData);
-//			latLng = getLatLong(search_address);
-//				alert("11 " + latLng);
-
-//	geocoder.geocode(search_address, function(results) {
-//				latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);})
-
-//			location["masen_latlng"] = latLng;
-
-//			if(location.masen_name == "Diamond") { mapAddress(location.masen_latlng, popupData);}
-
 
 			locations.push(location);
 			alert("9 " + locations);
@@ -165,51 +132,14 @@ mapAddress(search_address, popupData);
 	}, function done(err) {
     	if (err) { console.error(err); return; }
 	});
-//	alert("7 " + locations);
-//	return locations;
 }
 
 getAirtableData();
-
-
-//loopThruData(locations);
-
-
-
 setTimeout(() => { loopThruData(locations);
 							  console.log("Delayed for 5 seconds.");
 				}, 5000);
 
 
-//	if(locations) {
-//	alert(locations);
-//	alert(locations[0].masen_name);
-//				console.log('Retrieved', locations[0].masen_name);
-
-/*
-let myPromise = new Promise((resolve, reject) => {
-	getAirtableData();
-});
-
-myPromise.resolve()
-.then(loopThruData(locations))
-.then( alert("no data returned"))
-/*
-{
-	setTimeout(() => {
-    alert("10!"); // Yay! Everything went well!
-  }, 1000);
-	alert("8 " + locations);
-	;
-}.then( alert("no data returned"))
-
-);
-*/
-/*
-(async () => console.log(await getAirtableData()))()
-.then(alert("11"))
-.then(loopThruData(locations))
-*/
 	</script>	
 
 </body>
