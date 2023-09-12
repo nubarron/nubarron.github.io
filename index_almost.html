@@ -55,11 +55,11 @@
 //		let masen_name, masen_desc, masen_address, masen_city, masen_state, masen_zip;
 	const locations = [];
 
-	function mapAddress(address, pop) {
+	async function mapAddress(address, pop) {
 		alert("1 " + address);
 		alert("2 " + pop);
 
-		geocoder.geocode(address, function(results) {
+		await geocoder.geocode(address, function(results) {
 			latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
 
 			masenpop = L.marker(latLng).addTo(map);
@@ -67,10 +67,10 @@
 		});
 	}
 
-	function loopThruData (loca) {
+	async function loopThruData (loca) {
 		alert("looping");
 
-  		for (const loc of loca) {
+  		for await (const loc of loca) {
     	console.log("3 " + loc);
 
 			loca.forEach((obj, i) => {
@@ -88,15 +88,15 @@
 		}
 	}
 
-		function getAirtableData () {
+		async function getAirtableData () {
 			var Airtable = require('airtable');
     		var base = new Airtable({apiKey: 'patHXMh9QL5KMwJzG.d5cc1651970c910d9faab7bd5246c025f994540188a71e4c9dad38d6c1192f94'}).base('appBW71DB555EyIBL');
 
-			base('Map_source').select({
+			await base('Map_source').select({
 			// Selecting the first 3 records in Grid view:
 				maxRecords: 3,
 				view: "Grid view"
-			}).eachPage(function page(records, fetchNextPage) {
+			}).eachPage(await function page(records, fetchNextPage) {
 		
 			// This function (`page`) will get called for each page of records.
 		
