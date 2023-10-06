@@ -71,12 +71,13 @@
 		alert("looping");
 
   		for await (const loc of loca) {
+			
     	console.log("3 " + loc);
 
 			loc.forEach((obj, i) => {
 				alert("20" + obj);
 				alert("21" + i);
-				
+
 				console.log("name", obj.masen_name);
 				console.log("address", obj.masen_address);
 
