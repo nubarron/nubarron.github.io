@@ -114,7 +114,13 @@ promise.then(function () {
 				alert("5 " + popupData);
 
 				mapAddress(search_address, popupData);
-				})
+				return new Promise(function (resolve) {
+				      setTimeout(resolve, interval);
+    				});
+
+
+
+				});
 			});	
 //		}
 	}
