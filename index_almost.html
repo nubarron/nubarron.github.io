@@ -58,11 +58,11 @@
 	var promise = Promise.resolve();
 
 
-	async function mapAddress(address, pop) {
+	function mapAddress(address, pop) {
 		alert("1 " + address);
 		alert("2 " + pop);
 
-		await geocoder.geocode(address, function(results) {
+		geocoder.geocode(address, function(results) {
 			latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
 
 			masenpop = L.marker(latLng).addTo(map);
