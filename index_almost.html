@@ -63,7 +63,7 @@
 		alert("2 " + pop);
 
 		geocoder.geocode(address, function(results) {
-			latLng = new L.latLng;
+			latLng = new L.latLng(results[0].center.lat, results[0].center.lng);
 
 
 			masenpop = L.marker(latLng).addTo(map);
