@@ -62,7 +62,7 @@
 		alert("1 " + address);
 		alert("2 " + pop);
 
-		geocode(address, function(results) {
+		geocoder.geocode(address, function(results) {
 			masenpop = L.marker(L.latLng).addTo(map);
 			masenpop.bindPopup(pop);
 	});
