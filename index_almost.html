@@ -58,12 +58,12 @@
 	var promise = Promise.resolve();
 
 
-	function mapAddress(address, pop) {
+	function mapAddress(address, pop, counter) {
 		alert("1 " + address);
 		alert("2 " + pop);
 
 		geocoder.geocode(address, function(results) {
-			latLng = new L.LatLng(results[i].center.lat, results[i].center.lng);
+			latLng = new L.LatLng(results[counter].center.lat, results[counter].center.lng);
 
 			masenpop = L.marker(latLng).addTo(map);
 			masenpop.bindPopup(pop);
@@ -113,7 +113,7 @@ promise.then(function () {
 				alert("4 " + search_address);
 				alert("5 " + popupData);
 
-				mapAddress(search_address, popupData);
+				mapAddress(search_address, popupData, i);
 				return new Promise(function (resolve) {
 				      setTimeout(resolve, interval);
     				});
