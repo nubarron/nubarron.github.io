@@ -52,7 +52,6 @@
 	let geocoder = L.Control.Geocoder.nominatim();
 
 	let search_address, popupData, latLng, masenpop, address;
-//		let masen_name, masen_desc, masen_address, masen_city, masen_state, masen_zip;
 	const locations = [];
 	var interval = 1000; // how much time should the delay between two iterations be (in milliseconds)?
 	var promise = Promise.resolve();
@@ -69,72 +68,25 @@
 
 			masenpop = L.marker(latLng).addTo(map);
 			masenpop.bindPopup(pop);
-	});
-
-/*
-		geocoder.geocode(address, function(results) {
-			latLng = new L.LatLng(results[0].center.lat, results[0].center.lng);
-
-			masenpop = L.marker(latLng).addTo(map);
-			masenpop.bindPopup(pop);
 		});
-
-*/		
 	}
-
-/*
-var array = ['some', 'array', 'containing', 'words'];
-var interval = 1000; // how much time should the delay between two iterations be (in milliseconds)?
-var promise = Promise.resolve();
-
-array.forEach(function (el) {
-  promise = promise.then(function () {
-    console.log(el);
-    return new Promise(function (resolve) {
-      setTimeout(resolve, interval);
-    });
-  });
-});
-
-promise.then(function () {
-  console.log('Loop finished.');
-});
-
-*/
-
-
 
 	async function loopThruData (loca) {
 		alert("looping");
-
-//  		for await (const loc of loca) {
-
-//    	console.log("3 " + loc);
-
-			loca.forEach((obj, i) => {
-				promise = promise.then(function () {
-				alert("20" + obj);
-				alert("21" + i);
-
+		loca.forEach((obj, i) => {
+			promise = promise.then(function () {
 				console.log("name", obj.masen_name);
 				console.log("address", obj.masen_address);
 
 				popupData = obj.masen_name + '<br><br><b>' + obj.masen_desc + '</b><br><br>'+ obj.masen_address + ', ' + obj.masen_city + ', ' + obj.masen_state + ', ' + obj.masen_zip;
 				search_address = obj.masen_address + ',+' + obj.masen_city + ',+' + obj.masen_state + ',+' + obj.masen_zip;
 				
-				alert("4 " + search_address);
-				alert("5 " + popupData);
-
 				mapAddress(search_address, popupData, i);
 				return new Promise(function (resolve) {
 				      setTimeout(resolve, interval);
     				});
-
-
-
 				});
 			});	
-//		}
 	}
 
 		async function getAirtableData () {
@@ -149,10 +101,8 @@ promise.then(function () {
 		
 			// This function (`page`) will get called for each page of records.
 		
-			//	    records.forEach(function(record) {
 				for (const record of records) {
-			//			await function(record);
-
+		
 				let location =	{
 					masen_name: record.get('Name'),  
 					masen_desc: record.get('Description'), // test
@@ -167,15 +117,6 @@ promise.then(function () {
 
 			alert("6 " + search_address);
 			alert("10 " + popupData);
-
-//			var index = location.findIndex(x => x.masen_name=="bob"); 
-// here you can check specific property for an object whether it exist in your array or not
-
-//if (location.indexOf(masen_item) === -1) array.push(item);
-
-//index === -1 ? arrayObj.push({your_object}) : console.log("object already exists")
- 
-
 
 			locations.push(location);
 			alert("9 " + locations);
