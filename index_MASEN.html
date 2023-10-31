@@ -58,9 +58,9 @@
 
 
 	function mapAddress(address, pop, counter) {
-		alert("1 " + address);
-		alert("2 " + pop);
-		alert("30 " + counter)
+//		alert("1 " + address);
+//		alert("2 " + pop);
+//		alert("30 " + counter)
 
 		geocoder.geocode(address, function(results) {
 			latLng = new L.latLng(results[0].center.lat, results[0].center.lng);
@@ -78,8 +78,8 @@
 				console.log("name", obj.masen_name);
 				console.log("address", obj.masen_address);
 
-				popupData = obj.masen_name + '<br><br><b>' + obj.masen_desc + '</b><br><br>'+ obj.masen_address + ', ' + obj.masen_city + ', ' + obj.masen_state + ', ' + obj.masen_zip;
-				search_address = obj.masen_address + ',+' + obj.masen_city + ',+' + obj.masen_state + ',+' + obj.masen_zip;
+				popupData = obj.masen_name + '<br><br><b>' + obj.masen_desc + '</b><br><br>'+ obj.masen_address + ', ' + obj.masen_city + ', ' + obj.masen_state; // + ', ' + obj.masen_zip;
+				search_address = obj.masen_address + ',+' + obj.masen_city + ',+' + obj.masen_state;// + ',+' + obj.masen_zip;
 				
 				mapAddress(search_address, popupData, i);
 				return new Promise(function (resolve) {
@@ -108,18 +108,17 @@
 					masen_desc: record.get('Description'), // test
 					masen_address: record.get('Address').replace(/\s/gi,"+"),
 					masen_city: record.get('City'),
-					masen_state: record.get('State'),
-					masen_zip: record.get('Zip Code')
+					masen_state: record.get('State')//, masen_zip: record.get('Zip Code')
 				}
 
-			search_address = location.masen_address + ',+' + location.masen_city + ',+' + location.masen_state + ',+' + location.masen_zip;
-			popupData = location.masen_name + '<br><br><b>' + location.masen_desc + '</b><br><br>'+ location.masen_address + ', ' + location.masen_city + ', ' + location.masen_state + ', ' + location.masen_zip;
+			search_address = location.masen_address + ',+' + location.masen_city + ',+' + location.masen_state;// + ',+' + location.masen_zip;
+			popupData = location.masen_name + '<br><br><b>' + location.masen_desc + '</b><br><br>'+ location.masen_address + ', ' + location.masen_city + ', ' + location.masen_state;// + ', ' + location.masen_zip;
 
-			alert("6 " + search_address);
-			alert("10 " + popupData);
+//		//	alert("6 " + search_address);
+//		//	alert("10 " + popupData);
 
 			locations.push(location);
-			alert("9 " + locations);
+//			alert("9 " + locations);
 	};
 
 
