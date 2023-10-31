@@ -63,11 +63,14 @@
 //		alert("30 " + counter)
 
 		geocoder.geocode(address, function(results) {
-			latLng = new L.latLng(results[0].center.lat, results[0].center.lng);
-
-
-			masenpop = L.marker(latLng).addTo(map);
-			masenpop.bindPopup(pop);
+			if ( latLng = new L.latLng(results[0].center.lat, results[0].center.lng))
+			{ masenpop = L.marker(latLng).addTo(map);
+			  masenpop.bindPopup(pop);
+			}
+			else { 
+				console.log("name", obj.masen_name);
+				console.log("address", obj.masen_address);
+			}				
 		});
 	}
 
@@ -75,8 +78,6 @@
 		alert("looping");
 		loca.forEach((obj, i) => {
 			promise = promise.then(function () {
-				console.log("name", obj.masen_name);
-				console.log("address", obj.masen_address);
 
 				popupData = obj.masen_name + '<br><br><b>' + obj.masen_desc + '</b><br><br>'+ obj.masen_address + ', ' + obj.masen_city + ', ' + obj.masen_state; // + ', ' + obj.masen_zip;
 				search_address = obj.masen_address + ',+' + obj.masen_city + ',+' + obj.masen_state;// + ',+' + obj.masen_zip;
