@@ -63,9 +63,11 @@
 //		alert("30 " + counter)
 
 		geocoder.geocode(address, function(results) {
-			if ( latLng = new L.latLng(results[0].center.lat, results[0].center.lng))
-			{ masenpop = L.marker(latLng).addTo(map);
-			  masenpop.bindPopup(pop);
+			if (results)
+			{
+			latLng = new L.latLng(results[0].center.lat, results[0].center.lng)
+			masenpop = L.marker(latLng).addTo(map);
+			masenpop.bindPopup(pop);
 			}
 			else { 
 				console.log("name", obj.masen_name);
