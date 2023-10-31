@@ -98,7 +98,7 @@
 
 			await base('Organizations-Uploaded').select({
 			// Selecting the first 3 records in Grid view:
-				maxRecords: 50,
+				maxRecords: 100,
 				view: "Grid view"
 			}).eachPage(await function page(records, fetchNextPage) {
 		
