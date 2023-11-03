@@ -70,7 +70,7 @@
 			}
 			else { 
 			latLng = new L.latLng(results[0].center.lat, results[0].center.lng)
-			masenpop = L.marker(latLng).addTo(map);
+			masenpop = L.marker(latLng, {color: 'red'}).addTo(map);
 			masenpop.bindPopup(pop);
 				
 			}				
