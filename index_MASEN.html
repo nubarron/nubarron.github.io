@@ -63,15 +63,16 @@
 //		alert("30 " + counter)
 
 		geocoder.geocode(address, function(results) {
-			if (results[0].center.lat)
+			if (results[0].center.lat === undefined)
 			{
-			latLng = new L.latLng(results[0].center.lat, results[0].center.lng)
-			masenpop = L.marker(latLng).addTo(map);
-			masenpop.bindPopup(pop);
-			}
-			else { 
 				console.log("name", obj.masen_name);
 				console.log("address", address);
+			}
+			else { 
+				latLng = new L.latLng(results[0].center.lat, results[0].center.lng)
+			masenpop = L.marker(latLng).addTo(map);
+			masenpop.bindPopup(pop);
+				
 			}				
 		});
 	}
