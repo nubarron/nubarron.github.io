@@ -78,7 +78,7 @@
 	}
 
 	async function loopThruData (loca) {
-		alert("looping");
+		alert("Mapping data");
 		loca.forEach((obj, i) => {
 			promise = promise.then(function () {
 
@@ -113,12 +113,12 @@
 					masen_desc: record.get('Description'), // test
 					masen_address: record.get('Address').replace(/\s/gi,"+"),
 					masen_city: record.get('City'),
-					masen_state: record.get('State'), 
+//					masen_state: record.get('State'), 
 					masen_zip: record.get('Zip Code')
 				}
 
-			search_address = location.masen_address + ',+' + location.masen_city + ',+' + location.masen_state + ',+' + location.masen_zip;
-			popupData = location.masen_name + '<br><br><b>' + location.masen_desc + '</b><br><br>'+ location.masen_address + ', ' + location.masen_city + ', ' + location.masen_state + ', ' + location.masen_zip;
+			search_address = location.masen_address + ',+' + location.masen_city + ',+ MA' + location.masen_zip;
+			popupData = location.masen_name + '<br><br><b>' + location.masen_desc + '</b><br><br>'+ location.masen_address + ', ' + location.masen_city + ', MA, ' + location.masen_zip;
 
 //		//	alert("6 " + search_address);
 //		//	alert("10 " + popupData);
