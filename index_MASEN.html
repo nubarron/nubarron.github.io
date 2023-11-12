@@ -117,12 +117,12 @@
 					masen_zip: record.get('Zip Code')
 				}
 
-			if (location.masen_name === "Adventure Pups") { continue; }
+			if (location.masen_name === 'Adventure Pups') { continue; }
 	
 			search_address = location.masen_address + ',+' + location.masen_city + ',+ MA + ' + location.masen_zip;
 			popupData = location.masen_name + '<br><br><b>' + location.masen_desc + '</b><br><br>'+ location.masen_address + ', ' + location.masen_city + ', MA ' + location.masen_zip;
 
-	alert("6 " + location.masen_address);
+//	alert("6 " + location.masen_address);
 //		//	alert("10 " + popupData);
 				
 			locations.push(location);
