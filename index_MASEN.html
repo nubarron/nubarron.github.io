@@ -82,8 +82,8 @@
 		loca.forEach((obj, i) => {
 			promise = promise.then(function () {
 
-				popupData = obj.masen_name + '<br><br><b>' + obj.masen_desc + '</b><br><br>'+ obj.masen_address + ', ' + obj.masen_city + ', ' + obj.masen_state + ', ' + obj.masen_zip;
-				search_address = obj.masen_address + ',+' + obj.masen_city + ',+' + obj.masen_state + ',+' + obj.masen_zip;
+				popupData = obj.masen_name + '<br><br><b>' + obj.masen_desc + '</b><br><br>'+ obj.masen_address + ', ' + obj.masen_city + ', MA, + ' + obj.masen_zip;
+				search_address = obj.masen_address + ',+' + obj.masen_city + ',+MA,+' + obj.masen_zip;
 				
 				mapAddress(search_address, popupData, i);
 				return new Promise(function (resolve) {
