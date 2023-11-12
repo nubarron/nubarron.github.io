@@ -100,7 +100,7 @@
 
 			await base('Organizations').select({
 			// Selecting the first 3 records in Grid view:
-				maxRecords: 300,
+				maxRecords: 400,
 				view: "Grid view"
 			}).eachPage(await function page(records, fetchNextPage) {
 		
@@ -118,7 +118,7 @@
 				}
 
 			search_address = location.masen_address + ',+' + location.masen_city + ',+ MA + ' + location.masen_zip;
-			popupData = location.masen_name + '<br><br><b>' + location.masen_desc + '</b><br><br>'+ location.masen_address + ', ' + location.masen_city + ', MA, ' + location.masen_zip;
+			popupData = location.masen_name + '<br><br><b>' + location.masen_desc + '</b><br><br>'+ location.masen_address + ', ' + location.masen_city + ', MA ' + location.masen_zip;
 
 	alert("6 " + search_address);
 //		//	alert("10 " + popupData);
