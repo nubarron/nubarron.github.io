@@ -63,7 +63,7 @@
 //		alert("30 " + counter)
 
 		geocoder.geocode(address, function(results) {
-			if (results[0].center === 'undefined')
+			if (results[0] === 'undefined')
 			{
 				console.log("name", obj.masen_name);
 				console.log("address", address);
