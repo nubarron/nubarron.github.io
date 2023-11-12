@@ -122,7 +122,9 @@
 
 	alert("6 " + search_address);
 //		//	alert("10 " + popupData);
-			if (location.masen_address) { locations.push(location); }
+			if (!location.masen_address) { continue; }
+				
+			locations.push(location);
 //			alert("9 " + locations);
 	};
 
