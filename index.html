@@ -94,9 +94,14 @@
 	}
 
 		async function getAirtableData () {
-			var Airtable = require('airtable');
+//			var Airtable = require('airtable');
 //    		var base = new Airtable({apiKey: 'patHXMh9QL5KMwJzG.d5cc1651970c910d9faab7bd5246c025f994540188a71e4c9dad38d6c1192f94'}).base('apppAkJxnKMpjgzC4');
-    		var base = new Airtable({apiKey: 'patHXMh9QL5KMwJzG.d5cc1651970c910d9faab7bd5246c025f994540188a71e4c9dad38d6c1192f94'}).base('appNADEuPeMR5Lpxu');
+//    		var base = new Airtable({apiKey: 'patHXMh9QL5KMwJzG.d5cc1651970c910d9faab7bd5246c025f994540188a71e4c9dad38d6c1192f94'}).base('appNADEuPeMR5Lpxu');
+
+			const base = require('airtable').base('appNADEuPeMR5Lpxu');
+
+//			curl https://api.airtable.com/v0/appNADEuPeMR5Lpxu/Organizations/recNCGvKoTJZ0VE8z \
+//  -H "Authorization: Bearer YOUR_SECRET_API_TOKEN"
 
 			await base('Organizations').select({
 			// Selecting the first 3 records in Grid view:
