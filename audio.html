@@ -13,17 +13,17 @@
 
       function playAudio(url) {
 //        new Audio(url).play();
-        if(status == false || audio.paused){
+        if(pause_status == false){
           new Audio(url).play;
-          status = true;
+          pause_status = true;
         }else{
           audio.pause();
-          status = false;
+          pause_status = false;
         }
      }  
 /*
       //initial status: audio is not playing
-      var status = false;
+      var pause_status = false;
       var audio = document.getElementById("myaudio");
 
 function audioHandler(){
@@ -41,7 +41,7 @@ function audioHandler(){
 */
     </script>
 
-    var status = false;
+    var pause_status = false;
 
     <input type="button" value="CLICK" onclick="playAudio('https://www.fesliyanstudios.com/play-mp3/387')">
 
