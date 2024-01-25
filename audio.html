@@ -6,10 +6,15 @@
   <body>
 
     <script>
-      function play() {
-        var audio = document.getElementById("audio");
-        audio.play();
-      }
+      //function play() {
+      //  var audio = document.getElementById("audio");
+      //  audio.play();
+      //}
+
+      function playAudio(url) {
+        new Audio(url).play();
+      }  
+
     </script>
 
     <input type="button" value="CLICK" onclick="play('https://www.fesliyanstudios.com/play-mp3/387')">
