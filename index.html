@@ -117,7 +117,7 @@
 					masen_zip: record.get('Zip Code')
 				}
 
-			if (location.masen_address === undefined) { alert(location.masen_name); }
+			if (location.masen_address === 'undefined') { alert(location.masen_name); }
 	
 			search_address = location.masen_address + ',+' + location.masen_city + ',+ MA + ' + location.masen_zip;
 			popupData = location.masen_name + '<br><br><b>' + location.masen_desc + '</b><br><br>'+ location.masen_address + ', ' + location.masen_city + ', MA ' + location.masen_zip;
